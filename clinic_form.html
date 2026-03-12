@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫美診所醫師看診單 - 授權聲明版 Canvas Wireframe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #f0f2f5;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+        canvas {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="medicalForm" width="800" height="1100"></canvas>
+
+<script>
+    const canvas = document.getElementById('medicalForm');
+    const ctx = canvas.getContext('2d');
+
+    // 設定全域樣式
+    ctx.fillStyle = '#333333';
+    ctx.strokeStyle = '#aaaaaa';
+    ctx.lineWidth = 1;
+
+    // --- 標題區塊 ---
+    ctx.font = 'bold 24px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('醫美診所醫師看診單', 400, 50);
+    
+    // 畫一條分隔線
+    ctx.beginPath();
+    ctx.moveTo(50, 70);
+    ctx.lineTo(750, 70);
+    ctx.stroke();
+
+    // --- 一、基本資訊區塊 ---
+    ctx.textAlign = 'left';
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText('一、 基本資訊與病史', 50, 110);
+    
+    ctx.font = '16px sans-serif';
+    ctx.fillText('病歷號碼：________________', 50, 150);
+    ctx.fillText('病患姓名：________________', 300, 150);
+    ctx.fillText('看診日期：____年__月__日', 550, 150);
+    
+    ctx.fillText('主治醫師：________________', 50, 190);
+    ctx.fillText('負責諮詢師：________________', 300, 190);
+
+    ctx.fillText('主訴與期望：________________________________________________________', 50, 230);
+    
+    // 繪製勾選框
+    ctx.strokeRect(50, 255, 15, 15);
+    ctx.fillText('無過敏史', 75, 268);
+    ctx.strokeRect(170, 255, 15, 15);
+    ctx.fillText('藥物/食物過敏：________________________', 195, 268);
+
+    // --- 二、建議施作項目區塊 (包含六列) ---
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText('二、 建議施作項目', 50, 330);
+
+    // 繪製表格外框
+    ctx.strokeRect(50, 350, 700, 280);
+    
+    ctx.beginPath();
+    // 橫線
+    ctx.moveTo(50, 390); ctx.lineTo(750, 390);
+    ctx.moveTo(50, 430); ctx.lineTo(750, 430);
+    ctx.moveTo(50, 470); ctx.lineTo(750, 470);
+    ctx.moveTo(50, 510); ctx.lineTo(750, 510);
+    ctx.moveTo(50, 550); ctx.lineTo(750, 550);
+    ctx.moveTo(50, 590); ctx.lineTo(750, 590);
+    
+    // 直線
+    ctx.moveTo(200, 350); ctx.lineTo(200, 630);
+    ctx.moveTo(400, 350); ctx.lineTo(400, 630);
+    ctx.moveTo(550, 350); ctx.lineTo(550, 630);
+    ctx.stroke();
+
+    // 填入表格表頭文字
+    ctx.font = 'bold 16px sans-serif';
+    ctx.fillText('建議療程名稱', 80, 376);
+    ctx.fillText('施作部位', 260, 376);
+    ctx.fillText('建議劑量/數量', 420, 376);
+    ctx.fillText('醫師特別囑咐', 590, 376);
+
+    // 第一列範例文字 (灰色)
+    ctx.font = '16px sans-serif';
+    ctx.fillStyle = '#888888';
+    ctx.fillText('(例如：皮秒雷射)', 60, 416);
+    ctx.fillText('(例如：全臉)', 240, 416);
+    ctx.fillText('(例如：3000發)', 410, 416);
+    ctx.fillText('(術後加強保濕)', 570, 416);
+    ctx.fillStyle = '#333333';
+
+    // --- 三、抽血項目與授權區塊 ---
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText('三、 抽血檢驗項目與授權 (全麻或特定療程適用)', 50, 680);
+
+    const bloodTests = [
+        { x: 50, y: 710, label: '常規抽血檢驗 (CBC, WBC)' },
+        { x: 400, y: 710, label: '凝血功能 (PT, APTT)' }
+    ];
+
+    bloodTests.forEach(test => {
+        ctx.strokeRect(test.x, test.y, 18, 18);
+        ctx.fillText(test.label, test.x + 30, test.y + 15);
+    });
+
+    // 新增：抽血同意與授權文字
+    ctx.font = '14px sans-serif';
+    ctx.fillStyle = '#555555';
+    ctx.fillText('【抽血授權聲明】', 50, 760);
+    ctx.strokeRect(50, 775, 14, 14);
+    ctx.fillText('本人同意接受上述抽血檢驗，已知悉可能產生之局部瘀青等微小風險，並授權診所依醫療廢棄物規定處理剩餘檢體。', 72, 787);
+    ctx.fillStyle = '#333333';
+
+    // --- 四、簽名欄位區塊 (Y軸全面下移) ---
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText('四、 宣告與簽署', 50, 850);
+    
+    ctx.font = '14px sans-serif';
+    ctx.fillStyle = '#555555';
+    ctx.fillText('綜合聲明語：本人已充分了解上述醫師建議之療程內容、預期效果及風險，並確認提供之資訊皆屬實。', 50, 880);
+    
+    ctx.fillStyle = '#333333';
+    ctx.font = '16px sans-serif';
+    
+    // 病患簽名區
+    ctx.strokeRect(50, 910, 200, 80);
+    ctx.fillText('病患簽名區 (Patient)', 70, 960);
+    ctx.fillText('日期：____/____/____', 50, 1020);
+
+    // 醫師簽名區
+    ctx.strokeRect(280, 910, 200, 80);
+    ctx.fillText('主治醫師簽名 (Doctor)', 300, 960);
+    ctx.fillText('日期：____/____/____', 280, 1020);
+
+    // 諮詢師簽名區
+    ctx.strokeRect(510, 910, 200, 80);
+    ctx.fillText('負責諮詢師 (Consultant)', 525, 960);
+    ctx.fillText('日期：____/____/____', 510, 1020);
+
+</script>
+</body>
+</html>
