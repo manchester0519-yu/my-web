@@ -14,6 +14,7 @@
             --text-muted: #64748b;
             --border-color: #e2e8f0;
             --success-color: #10b981;
+            --wine-color: #991b1b;         /* 酒紅 */
         }
 
         * {
@@ -106,7 +107,7 @@
             margin-top: 4px;
         }
 
-        /* 全新行動化圖卡設計 (Card Layout) */
+        /* 行動化圖卡設計 */
         .info-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -148,12 +149,10 @@
             color: #475569;
         }
 
-        /* 地點專屬導航圖卡 */
         .location-card {
             border-left-color: #ea4335;
         }
 
-        /* 內嵌於時序卡片的小型地圖導航按鈕 */
         .inline-map-btn {
             display: inline-flex;
             align-items: center;
@@ -297,6 +296,13 @@
             transition: color 0.2s;
         }
 
+        .checklist-text small {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
         .checklist-item:has(input:checked) {
             background-color: #f8fafc;
             opacity: 0.7;
@@ -320,6 +326,7 @@
         .tag-danger { background-color: #fee2e2; color: #ef4444; }
         .tag-warning { background-color: #fef3c7; color: #d97706; }
         .tag-info { background-color: #e0f2fe; color: #0284c7; }
+        .tag-wine { background-color: #fce7f3; color: #991b1b; }
 
         /* 底部吸底進度條與快速跳轉 */
         .bottom-nav {
@@ -458,7 +465,7 @@
                 <span class="info-card-time">08:30 取車</span>
             </div>
             <div class="info-card-body">辦理取車手續，並務必現場確實安裝與調整女童安全汽座。</div>
-            <a class="map-btn" href="https://maps.app.goo.gl/uXpD3t4mK6WvY7A8A" target="_blank">🗺️ 開啟 Google Maps 導航</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=中租租車台北大直站" target="_blank">🗺️ 開啟 Google Maps 導航</a>
         </div>
 
         <div class="info-card location-card">
@@ -467,7 +474,7 @@
                 <span class="info-card-time">14:00 進場</span>
             </div>
             <div class="info-card-body">地址：新竹縣尖石鄉新樂村水田4鄰125之1號（海拔 550m）。現場需以現金付清尾款 $3,800。</div>
-            <a class="map-btn" href="https://maps.app.goo.gl/fBqj2D7NmLW8Pq3x5" target="_blank">🗺️ 開啟 Google Maps 導航</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=水田谷露營區" target="_blank">🗺️ 開啟 Google Maps 導航</a>
         </div>
 
         <div class="info-card location-card">
@@ -476,7 +483,7 @@
                 <span class="info-card-time">次日 13:30 聚餐</span>
             </div>
             <div class="info-card-body">地址：313新竹縣尖石鄉新樂村8鄰36-2號。回程親友大聚餐點。</div>
-            <a class="map-btn" href="https://maps.app.goo.gl/pWbJ3K9mLX8Qr4y5A" target="_blank">🗺️ 開啟 Google Maps 導航</a>
+            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=八五山泉鱒魚餐廳" target="_blank">🗺️ 開啟 Google Maps 導航</a>
         </div>
 
 
@@ -487,13 +494,13 @@
             <div class="spot-title">新竹尖石｜水田谷露營區</div>
             <div class="spot-tags-container">
                 <span class="spot-tag">親水油羅溪</span>
-                <span class="spot-tag">幼兒大沙坑</span>
+                <span class="spot-tag">魚寶大沙坑</span>
                 <span class="spot-tag">冰箱/飲水機齊全</span>
                 <span class="spot-tag">有吹風機</span>
             </div>
             <ul class="spot-detail-list">
-                <li><b>抵達遊玩首選：</b>營區內規畫有**專屬幼兒大沙坑**，環境安全，白天紫外線極低，安頓好後可立即帶女兒享受挖沙親子時光。</li>
-                <li><b>溪谷親水防護：</b>營地緊鄰油羅溪畔溪谷，若帶女兒至溪邊散步，務必穿著**防滑拖鞋**並注意大石塊。</li>
+                <li><b>抵達遊玩首選：</b>營區內規畫有**專屬幼兒大沙坑**，環境安全，白天紫外線極低，安頓好後可立即帶魚寶享受挖沙親子時光。</li>
+                <li><b>溪谷親水防護：</b>營地緊鄰油羅溪畔溪谷，若帶魚寶至溪邊散步，務必穿著**防滑拖鞋**並注意大石塊。</li>
                 <li><b>硬體設施：</b>營本部配有商業大冰箱，採買後第一時間把鮮乳、調酒白酒送入冰鎮；營區浴室熱水穩定且提供吹風機。</li>
             </ul>
         </div>
@@ -509,7 +516,7 @@
             </div>
             <ul class="spot-detail-list">
                 <li><b>招牌必點推薦：</b>主打山泉水養殖，**「現撈鱒魚兩吃」**（清蒸魚身、鮮魚頭湯）是必點經典，魚肉極其鮮甜無土味。</li>
-                <li><b>老饕隱藏菜色：</b>若同行人數多，推薦加點岩烤鱘龍魚或白斬放山雞；極致推薦**段木香菇與清炒高山高麗菜**，女兒也能安心大口吃。</li>
+                <li><b>老饕隱藏菜色：</b>若同行人數多，推薦加點岩烤鱘龍魚或白斬放山雞；極致推薦**段木香菇與清炒高山高麗菜**，魚寶也能安心大口吃。</li>
                 <li><b>行動提示：</b>週日中午用餐人潮極多，建議抵達前 30 分鐘於車上先撥電話確認訂位現況。</li>
             </ul>
         </div>
@@ -522,8 +529,8 @@
                 <div class="info-card-title">🚗 取車與出發</div>
                 <span class="info-card-time">5/23 08:30 - 10:00</span>
             </div>
-            <div class="info-card-body">於**中租大直站**辦理手續，確實核對車況，完成 10-11kg 規格女童汽座安全鎖定。</div>
-            <a class="inline-map-btn" href="https://maps.app.goo.gl/uXpD3t4mK6WvY7A8A" target="_blank">📍 導航到中租大直站</a>
+            <div class="info-card-body">於**中租大直站**辦理手續，確實核對車況，完成 10-11kg 規格魚寶汽座安全鎖定。</div>
+            <a class="inline-map-btn" href="https://www.google.com/maps/search/?api=1&query=中租租車台北大直站" target="_blank">📍 導航到中租大直站</a>
         </div>
 
         <div class="info-card">
@@ -531,7 +538,7 @@
                 <div class="info-card-title">🛒 市區大採買</div>
                 <span class="info-card-time">5/23 10:00 - 11:30</span>
             </div>
-            <div class="info-card-body">一站式購足兩日乾糧與育兒品。同步購齊**露營酒吧關鍵材料**（川貝枇杷膏、鮮乳、伯爵茶包、水蜜桃果凍）。</div>
+            <div class="info-card-body">一站式購足兩日乾糧與育兒品。同步照清單購齊**露營熱調酒與微醺酒吧關鍵材料**。</div>
         </div>
 
         <div class="info-card">
@@ -539,7 +546,7 @@
                 <div class="info-card-title">🍱 午餐與動線調度</div>
                 <span class="info-card-time">5/23 11:30 - 14:00</span>
             </div>
-            <div class="info-card-body">市區享用輕便午餐。隨後開車進山，車程預估 1.5 小時，**刻意吻合女兒午睡時間**，讓寶寶在車上睡飽。</div>
+            <div class="info-card-body">市區享用輕便午餐。隨後開車進山，車程預估 1.5 小時，**刻意吻合魚寶午睡時間**，讓寶寶在車上睡飽。</div>
         </div>
 
         <div class="info-card" style="border-left-color: #ea4335;">
@@ -547,8 +554,8 @@
                 <div class="info-card-title">🎪 營地安頓與親子沙坑</div>
                 <span class="info-card-time">5/23 14:00 - 18:00</span>
             </div>
-            <div class="info-card-body">付清尾款 $3,800，將低溫食材進營地冰箱。15:00 後陪女兒在營區大沙坑堆沙堡，親近自然。</div>
-            <a class="inline-map-btn" href="https://maps.app.goo.gl/fBqj2D7NmLW8Pq3x5" target="_blank">📍 導航到水田谷露營區</a>
+            <div class="info-card-body">付清尾款 $3,800，將低溫食材進營地冰箱。15:00 後陪魚寶在營區大沙坑堆沙堡，親近自然。</div>
+            <a class="inline-map-btn" href="https://www.google.com/maps/search/?api=1&query=水田谷露營區" target="_blank">📍 導航到水田谷露營區</a>
         </div>
 
         <div class="info-card">
@@ -556,7 +563,7 @@
                 <div class="info-card-title">🍳 晚餐炊事與盥洗</div>
                 <span class="info-card-time">5/23 18:00 - 21:00</span>
             </div>
-            <div class="info-card-body">戶外客廳帳炊事。20:00 氣溫下滑，幫女兒盥洗並換上厚保暖衣物、蓋好自備枕頭棉被安穩入睡。</div>
+            <div class="info-card-body">戶外客廳帳炊事。20:00 氣溫下滑，幫魚寶盥洗並換上厚保暖衣物、蓋好自備枕頭棉被安穩入睡。</div>
         </div>
 
         <div class="info-card" style="border-left-color: var(--accent-color);">
@@ -564,7 +571,7 @@
                 <div class="info-card-title">🔥 Amymy 溪谷微醺酒吧</div>
                 <span class="info-card-time">5/23 21:00+</span>
             </div>
-            <div class="info-card-body">燒熱開水，點燃**仙女棒**浪漫點綴。星空酒吧開張：主打**川貝枇杷膏熱威士忌**、熱伯爵琴酒，極致暖胃消暑。</div>
+            <div class="info-card-body">燒熱開水，點燃**仙女棒**浪漫點綴。對照手冊配方調製**營地特調熱調酒**，極致暖胃消暑。</div>
         </div>
 
         <div class="info-card">
@@ -581,7 +588,7 @@
                 <span class="info-card-time">5/24 13:30+</span>
             </div>
             <div class="info-card-body">前往**八五山泉餐廳**享用現撈鱒魚，飽餐後輕鬆開車返台。</div>
-            <a class="inline-map-btn" href="https://maps.app.goo.gl/pWbJ3K9mLX8Qr4y5A" target="_blank">📍 導航到八五山泉餐廳</a>
+            <a class="inline-map-btn" href="https://www.google.com/maps/search/?api=1&query=八五山泉鱒魚餐廳" target="_blank">📍 導航到八五山泉餐廳</a>
         </div>
 
         <div class="info-card" style="border-left-color: #ea4335;">
@@ -590,7 +597,95 @@
                 <span class="info-card-time">5/24 16:00+</span>
             </div>
             <div class="info-card-body">北返市區，回到中租大直站辦理還車手續，平安賦歸。</div>
-            <a class="inline-map-btn" href="https://maps.app.goo.gl/uXpD3t4mK6WvY7A8A" target="_blank">📍 導航回中租大直站</a>
+            <a class="inline-map-btn" href="https://www.google.com/maps/search/?api=1&query=中租租車台北大直站" target="_blank">📍 導航回中租大直站</a>
+        </div>
+
+
+        <div class="section-title" id="section-cocktails" style="color: var(--wine-color);">🍹 週末露營熱調酒清單</div>
+        
+        <div class="section-card" style="padding-top: 10px; border-left: 6px solid var(--wine-color);">
+            <div class="checklist-group">
+                <h3>🛠️ 必備調酒器具</h3>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">雪克杯 / 攪拌匙 <small>調製經典調酒用</small></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">耐熱鋼杯 <small>盛裝熱調酒用</small></span>
+                </label>
+            </div>
+
+            <div class="checklist-group">
+                <h3>🍾 三大核心基酒 <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">（依喜好攜帶足量）</span></h3>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">威士忌 <span class="tag tag-wine">木質暖胃</span><small>迷你瓶 50ml 或大瓶裝，帶有煙燻或橡木桶風味，與枇杷膏、鮮奶極搭。</small></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">琴酒 <span class="tag tag-wine">草本香氣</span><small>調製經典經典調酒與熱伯爵琴酒的核心。</small></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">平價白酒 <span class="tag tag-wine">果香特調</span><small>冰鎮後直飲或做熱特調皆宜。</small></span>
+                </label>
+            </div>
+
+            <div class="checklist-group">
+                <h3>✨ 五大主打山林特調酒譜 <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">（材料超市購置）</span></h3>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text"><b>東方療癒熱托迪</b>
+                        <small><b>比例：</b>川貝枇杷膏 15cc ➔ 威士忌 45cc ➔ 熱水 150cc ➔ 檸檬片 1 片。</small>
+                        <small><b>提示：</b>枇杷膏先用熱水化開，再加入威士忌與檸檬片。</small>
+                    </span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text"><b>熱鮮奶威士忌</b>
+                        <small><b>比例：</b>優質鮮乳 120cc ➔ 威士忌 45cc ➔ 黑糖 1 茶匙（可選）。</small>
+                        <small><b>提示：</b>鮮乳小火加熱（勿煮沸以免結皮），倒入杯中混和威士忌與黑糖，奶香木質調極暖胃。</small>
+                    </span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text"><b>熱伯爵琴酒</b>
+                        <small><b>比例：</b>熱伯爵茶 150cc ➔ 琴酒 45cc ➔ 蜂蜜或砂糖 1 大匙 ➔ 檸檬片 1 片。</small>
+                        <small><b>提示：</b>佛手柑茶香與琴酒的草本風味極搭，甜度可依個人喜好微調。</small>
+                    </span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text"><b>熱水蜜桃白酒</b>
+                        <small><b>比例：</b>白酒 120cc ➔ 水蜜桃果凍 1 顆 ➔ 熱水 30cc。</small>
+                        <small><b>提示：</b>將果凍在杯底用湯匙壓碎，倒入白酒與少許熱水，用卡式爐極小火微熱，果凍半融口感滑順。</small>
+                    </span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text"><b>水蜜桃牛奶威士忌</b>
+                        <small><b>比例：</b>優質鮮乳 120cc ➔ 威士忌 30cc ➔ 水蜜桃果凍 1 顆。</small>
+                        <small><b>提示：</b>果凍搗碎作為基底，倒入微熱的鮮奶與威士忌，是一道帶有果香與酒感的營地熱甜點。</small>
+                    </span>
+                </label>
+            </div>
+
+            <div class="checklist-group">
+                <h3>🥤 碳酸、調味與宵夜類</h3>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">碳酸飲料類 <small>通寧水（Tonic）、蘇打水、可樂、薑汁汽水</small></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">果汁與調味類 <small>檸檬汁/新鮮檸檬、香草糖漿、薄荷葉（若想調莫希托 Mojito）</small></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">微醺宵夜點心 <small>自備泡麵、搭配調酒的起司、高達乾酪或小餅乾</small></span>
+                </label>
+            </div>
         </div>
 
 
@@ -613,7 +708,7 @@
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">個人盥洗用品（牙刷/毛巾/沐浴乳） <span class="tag tag-warning">自備</span></span>
+                    <span class="checklist-text">個人盥洗用品（毛巾） <span class="tag tag-warning">自備</span></span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
@@ -626,63 +721,115 @@
             </div>
 
             <div class="checklist-group">
-                <h3>2. Amymy 酒吧與廚房備料盤</h3>
+                <h3>2. 營地廚房與備料盤</h3>
                 <label class="checklist-item">
                     <input type="checkbox">
                     <span class="checklist-text">不鏽鋼備料盤 <span class="tag tag-info">料理/酒吧神隊友</span></span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">核心基酒（威士忌、琴酒、白酒）</span>
-                </label>
-                <label class="checklist-item">
-                    <input type="checkbox">
-                    <span class="checklist-text">酒吧必備器具（雪克杯、攪拌匙、耐熱杯）</span>
-                </label>
-                <label class="checklist-item">
-                    <input type="checkbox">
-                    <span class="checklist-text">特調副料（川貝枇杷膏、鮮乳、伯爵茶包、水蜜桃果凍）</span>
-                </label>
-                <label class="checklist-item">
-                    <input type="checkbox">
-                    <span class="checklist-text">經典不敗款（通寧水 Tonic、可樂、下酒宵夜零食）</span>
+                    <span class="checklist-text">常溫寶寶粥、沙坑娛樂挖沙玩具組 <small>（與時序同步對齊）</small></span>
                 </label>
             </div>
 
             <div class="checklist-group">
-                <h3>3. 一歲女兒育兒與浪漫生活防護</h3>
+                <h3>3. 魚寶專屬育兒與家庭生活防護</h3>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">悶燒罐 / 保溫罐 <span class="tag tag-danger">寶寶副食品/熱水核心</span></span>
+                    <span class="checklist-text">尿布 <span class="tag tag-danger">核心高消品</span></span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">仙女棒 <span class="tag tag-info">夜間家庭浪漫點綴</span></span>
+                    <span class="checklist-text">奶瓶、奶粉 (明治Q貝)</span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">大量衛生紙 / 濕紙巾 <span class="tag tag-warning">極高消耗品</span></span>
+                    <span class="checklist-text">濕巾、乾濕兩用巾 <span class="tag tag-warning">極高消耗品</span></span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">強效防蚊液 <span class="tag tag-danger">溪谷必備</span></span>
+                    <span class="checklist-text">牙刷、牙膏</span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">女兒保暖防風外套、帽子 <span class="tag tag-warning">抗 19°C 夜溫</span></span>
+                    <span class="checklist-text">拋棄式尿布墊、浴巾</span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">常溫寶寶粥、奶粉奶瓶、足量尿布</span>
+                    <span class="checklist-text">衣物、防踢被、安撫巾 <span class="tag tag-warning">抗 19°C 夜溫</span></span>
                 </label>
                 <label class="checklist-item">
                     <input type="checkbox">
-                    <span class="checklist-text">沙坑娛樂（挖沙玩具組、安撫玩偶、睡前繪本）</span>
+                    <span class="checklist-text">屁屁膏、乳液</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">棉花棒、指甲刀</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">水瓶、泰山純水 <span class="tag tag-info">也可當地買寶寶水</span></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">保溫瓶或悶燒罐</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">瞬熱飲水機 <span class="tag tag-danger">泡奶專用神隊友</span></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">電風扇 <span class="tag tag-info">帳內空氣循環</span></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">晾奶瓶架、奶瓶刷、奶瓶清潔液、洗碗精</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">食物剪、餐具、圍兜</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">衣物手洗精、衣架</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">防蚊貼片或防蚊液、防曬 <span class="tag tag-danger">溪谷防護</span></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">餅乾、益生菌</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">新的玩具或貼紙書 <span class="tag tag-info">車程安撫神器</span></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">捎巾、推車、雨罩</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">仙女棒 <span class="tag tag-info">夜間浪漫點綴</span></span>
                 </label>
             </div>
 
             <div class="checklist-group">
-                <h3>4. 3C電力與隨身雜項</h3>
+                <h3>4. 醫療備用品</h3>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">體溫計、退熱貼片、備用藥 <span class="tag tag-danger">必備</span></span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span class="checklist-text">餵藥器、吸鼻球</span>
+                </label>
+            </div>
+
+            <div class="checklist-group">
+                <h3>5. 3C電力與隨身雜項</h3>
                 <label class="checklist-item">
                     <input type="checkbox">
                     <span class="checklist-text">手機、強效行動電源、各規格充電線</span>
@@ -697,7 +844,7 @@
         <div class="alert-card" style="margin-bottom: 40px;">
             <h2>⚠️ 營區三大紅線鐵律</h2>
             <ul style="padding-left: 20px; font-size: 0.9rem; color: #b91c1c; line-height: 1.8;">
-                <li><b>絕對禁帶寵物：</b>全區嚴禁攜帶任何寵物入場。</li>
+                <li><b>絕對禁帶寵物：</b>全區嚴禁攜帶 any 寵物入場。</li>
                 <li><b>室內絕對禁菸酒飲食：</b>若入住馬車屋/合掌屋，屋內嚴禁飲食、吸菸，違者器材受損需全額賠償。</li>
                 <li><b>焚火切勿落地：</b>生火玩仙女棒必須使用焚火台且架高，嚴禁直接在地板或草皮燃燒。</li>
             </ul>
@@ -716,7 +863,7 @@
             <button class="tab-btn active" onclick="scrollToElement('section-weather', this)">🌤️氣象</button>
             <button class="tab-btn" onclick="scrollToElement('section-maps', this)">📍導航</button>
             <button class="tab-btn" onclick="scrollToElement('section-spots', this)">🌲攻略</button>
-            <button class="tab-btn" onclick="scrollToElement('section-schedule', this)">📅時序</button>
+            <button class="tab-btn" onclick="scrollToElement('section-cocktails', this)">🍹調酒</button>
             <button class="tab-btn" onclick="scrollToElement('section-checklist', this)">✅點檢</button>
         </div>
     </div>
