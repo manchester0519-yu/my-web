@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICO-LEA Pro : 醫美雷射能量與 LADD 視覺化聯動教材</title>
+    <style>
+        :root {
+            --primary: #008ca7;
+            --secondary: #00b4d8;
+            --ladd-color: #8338ec;
+            --danger: #e63946;
+            --bg-color: #f0f4f8;
+            --panel-bg: #ffffff;
+            --text-main: #333;
+            --text-muted: #666;
+            
+            /* 皮膚顏色變數 */
+            --skin-epi-f: #fbe3d9;
+            --skin-der-f: #f5c8c5;
+            --skin-epi-m: #f0d4c8;
+            --skin-der-m: #eebfb9;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .header h1 { margin: 0; font-size: 24px; color: var(--primary); }
+        .header p { margin: 5px 0 0 0; font-size: 14px; color: var(--text-muted); }
+
+        /* 三欄式佈局 */
+        .layout-container {
+            display: grid;
+            grid-template-columns: 320px 1fr 380px;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: calc(100vh - 100px);
+        }
+
+        @media (max-width: 1100px) {
+            .layout-container { grid-template-columns: 1fr; height: auto; }
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            border-left: 5px solid var(--primary);
+            padding-left: 10px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* 按鈕樣式 */
+        .btn-reset {
+            background-color: #f8f9fa;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-reset:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        /* 左欄：控制項 */
+        .gender-switch {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .gender-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            background: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+            transition: all 0.2s;
+        }
+        .gender-btn.active.female { border-color: #ff8fa3; background: #fff0f3; color: #d90429; }
+        .gender-btn.active.male { border-color: #0077b6; background: #e0fbfc; color: #0077b6; }
+
+        .control-group {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .control-group.active-ladd { border-left: 4px solid var(--ladd-color); }
+        .control-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .input-row { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px;}
+        .input-row label { font-size: 13px; color: var(--text-muted); }
+        input[type="number"] {
+            width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; box-sizing: border-box;
+        }
+
+        /* 中欄：巨觀臉部網格 */
+        .face-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .face-svg-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 3/4;
+        }
+        svg { width: 100%; height: 100%; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
+        
+        .grid-cell {
+            stroke: rgba(255,255,255,0.4);
+            stroke-width: 0.5;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .grid-cell:hover { stroke: #333; stroke-width: 2; }
+        .grid-forbidden { fill: rgba(100,100,100,0.8) !important; cursor: not-allowed; }
+        
+        .legend {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+        }
+        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .legend-color { width: 16px; height: 16px; border-radius: 4px; }
+
+        /* 右欄：看板與微觀解剖 */
+        .data-card {
+            background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 12px; margin-bottom: 12px;
+        }
+        .data-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+        .data-val { font-size: 24px; font-weight: bold; color: var(--primary); }
+        .data-val.ladd { color: var(--ladd-color); }
+        .data-val.danger { color: var(--danger); animation: blink 1s infinite; }
+        .formula-box { font-family: monospace; font-size: 12px; background: #e0f7fa; padding: 4px; border-radius: 4px; color: var(--primary); margin-top: 5px;}
+
+        /* 微觀皮層解剖 CSS Art */
+        .anatomy-viewer {
+            flex: 1;
+            background: #eef2f5;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #ccc;
+            margin-top: 10px;
+            min-height: 250px;
+        }
+        .layer-epi {
+            height: 30%; width: 100%; background: var(--skin-epi-f); border-bottom: 2px dashed rgba(0,0,0,0.1);
+            position: relative; transition: all 0.5s;
+        }
+        .layer-der {
+            height: 70%; width: 100%; background: var(--skin-der-f); position: relative; transition: all 0.5s;
+        }
+        
+        /* 動畫特效 */
+        .liob-bubble {
+            position: absolute; width: 8px; height: 8px; background: #4cc9f0; border-radius: 50%; opacity: 0;
+            animation: floatBubble 2s infinite ease-in-out;
+        }
+        .laser-beam {
+            position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+            width: 6px; height: 0; background: var(--ladd-color); box-shadow: 0 0 10px var(--ladd-color);
+            opacity: 0; z-index: 10;
+        }
+        .ladd-channel {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 100%; background: rgba(131, 56, 236, 0.4);
+            border-left: 1px dashed var(--ladd-color); border-right: 1px dashed var(--ladd-color);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .blood-vessel {
+            position: absolute; bottom: 20px; width: 100%; height: 6px; background: #ff4d6d; opacity: 0.6;
+        }
+        .bleeding {
+            position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: #ba1826; border-radius: 50%; opacity: 0; filter: blur(3px);
+        }
+
+        /* 狀態控制 */
+        .state-danger .layer-epi, .state-danger .layer-der { background: #3a3a3a !important; }
+        .state-danger .blood-vessel { background: #000 !important; }
+        .state-ladd .ladd-channel { opacity: 1; }
+        .state-ladd .bleeding { opacity: 1; animation: bleedPulse 1s infinite; }
+        .state-ladd .laser-beam { animation: strike 1s infinite; }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; color: #000; } }
+        @keyframes floatBubble { 0% { opacity: 0; transform: translateY(10px) scale(0.5); } 50% { opacity: 0.8; transform: translateY(0) scale(1.2); } 100% { opacity: 0; transform: translateY(-10px) scale(1); } }
+        @keyframes strike { 0% { height: 0; opacity: 1; } 50% { height: 150px; opacity: 1; } 100% { height: 150px; opacity: 0; } }
+        @keyframes bleedPulse { 0% { transform: translateX(-50%) scale(1); opacity: 0.6; } 50% { transform: translateX(-50%) scale(1.5); opacity: 1; } 100% { transform: translateX(-50%) scale(1); opacity: 0.6; } }
+
+        .anatomy-label { position: absolute; top: 10px; left: 10px; font-weight: bold; font-size: 12px; background: rgba(255,255,255,0.8); padding: 4px 8px; border-radius: 4px; z-index: 20; }
+        
+        .toast { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: #2b2d42; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 12px; opacity: 0; transition: 0.3s; pointer-events: none;}
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>PICO-LEA Pro : 三維全互動臨床模擬系統</h1>
+    <p>巨觀網格熱像 ✕ 微觀皮層擊穿 ✕ 即時能量疊加公式</p>
+</div>
+
+<div class="layout-container">
+    
+    <div class="panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h2 class="panel-title" style="margin-bottom: 0;">1. 患者與參數設定</h2>
+            <button class="btn-reset" onclick="resetToDefault()">🔄 一鍵還原預設</button>
+        </div>
+        
+        <div class="gender-switch">
+            <div class="gender-btn active female" onclick="setGender('female')">👩 亞洲女性</div>
+            <div class="gender-btn male" onclick="setGender('male')">👨 亞洲男性</div>
+        </div>
+
+        <div class="input-row" style="margin-bottom: 20px;">
+            <label>全臉總表面積 (cm²)</label>
+            <input type="number" id="in_area" value="300" step="10" oninput="recalc()">
+        </div>
+
+        <div class="control-group">
+            <div class="control-header">
+                <input type="checkbox" id="chk_net" checked onchange="recalc()"> [Step 1] 淨膚 (0.7J)
+            </div>
+            <div class="input-row">
+                <label>全臉掃描發數</label>
+                <input type="number" id="in_net" value="1000" step="100" oninput="recalc()">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-header">
+                <input type="checkbox" id="chk_hc" checked onchange="recalc()"> [Step 2] 蜂巢 (0.26J)
+            </div>
+            <div class="input-row">
+                <label>全臉掃描發數</label>
+                <input type="number" id="in_hc" value="1000" step="100" oninput="recalc()">
+            </div>
+        </div>
+
+        <div class="control-group active-ladd">
+            <div class="control-header" style="color:var(--ladd-color);">
+                <input type="checkbox" id="chk_single" checked onchange="recalc()"> [Step 3] 單點標靶 (3.0J)
+            </div>
+            <div class="input-row">
+                <label>👉 請在「中欄臉部圖」點擊要加強的格子</label>
+                <div style="font-size: 14px; font-weight:bold; color:var(--ladd-color); padding: 5px 0;">已選擇加強範圍：<span id="ui_grid_count">1</span> 格</div>
+                <select id="area_single" style="display:none;"><option value="1">1</option></select>
+            </div>
+            <div class="input-row">
+                <label>每一格(4cm²) 灌注發數</label>
+                <input type="number" id="in_single" value="20" step="5" oninput="recalc()">
+            </div>
+        </div>
+    </div>
+
+    <div class="panel face-container">
+        <h2 class="panel-title" style="align-self: flex-start; margin-bottom: 0;">2. 點擊劃定加強靶區</h2>
+        
+        <div class="face-svg-wrapper">
+            <svg viewBox="0 0 200 260" id="faceSvg">
+                <defs>
+                    <clipPath id="clip-female">
+                        <path d="M100,10 C150,10 180,60 180,120 C180,190 140,250 100,250 C60,250 20,190 20,120 C20,60 50,10 100,10 Z"></path>
+                    </clipPath>
+                    <clipPath id="clip-male">
+                        <path d="M100,10 C160,10 190,60 190,130 C190,200 150,250 120,250 L80,250 C50,250 10,200 10,130 C10,60 40,10 100,10 Z"></path>
+                    </clipPath>
+                </defs>
+                
+                <path id="faceBg" d="M100,10 C150,10 180,60 180,120 C180,190 140,250 100,250 C60,250 20,190 20,120 C20,60 50,10 100,10 Z" fill="#fbe3d9"></path>
+                
+                <g id="gridGroup" clip-path="url(#clip-female)"></g>
+            </svg>
+            <div class="toast" id="toast">已選擇格數更新</div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background:#d3d3d3;"></div>禁區</div>
+            <div class="legend-item"><div class="legend-color" style="background:#ffb3c1;"></div>常規底色</div>
+            <div class="legend-item"><div class="legend-color" style="background:var(--ladd-color);"></div>LADD標靶</div>
+            <div class="legend-item"><div class="legend-color" style="background:#1a1a1a; border:1px solid red;"></div>超標警告</div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2 class="panel-title">3. 複合熱能與皮層剖面</h2>
+
+        <div class="data-card">
+            <div class="data-label">整場療程機器輸出總熱能</div>
+            <div class="data-val" id="out_totalJ">0 <span style="font-size:14px; color:#666; font-weight:normal;">J</span></div>
+            <div class="formula-box" id="out_formula">公式計算中...</div>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+            <div class="data-card" style="flex:1;">
+                <div class="data-label">全臉單格(4cm²) 底色</div>
+                <div class="data-val" id="out_baseJ" style="font-size:20px; color:#555;">0 <span style="font-size:12px;">J</span></div>
+            </div>
+            <div class="data-card" style="flex:1; border-left:3px solid var(--ladd-color);">
+                <div class="data-label">局部加強格 複合能量</div>
+                <div class="data-val" id="out_maxJ">0 <span style="font-size:14px; font-weight:normal;">J</span></div>
+            </div>
+        </div>
+
+        <div class="data-card">
+            <div class="data-label">LADD 局部穿透效率強化比</div>
+            <div class="data-val ladd" id="out_ratio">0.0 <span style="font-size:14px; font-weight:normal;">倍</span></div>
+        </div>
+
+        <div class="anatomy-viewer" id="anatomy">
+            <div class="anatomy-label" id="anatomy_label">🟢 常規保養狀態</div>
+            <div class="laser-beam"></div>
+            <div class="layer-epi" id="lyr_epi"></div>
+            <div class="layer-der" id="lyr_der">
+                <div class="ladd-channel"></div>
+                <div class="blood-vessel"></div>
+                <div class="bleeding"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    /* ----------------------------------------------------
+       1. 系統常數與狀態
+    ---------------------------------------------------- */
+    const J_NET = 0.7;
+    const J_HC = 0.26;
+    const J_SGL = 3.0;
+
+    let currentGender = 'female';
+    let selectedGrids = new Set(); 
+
+    // 禁區設定 (眼睛與嘴巴)
+    const forbiddenZones = new Set([
+        "3_3", "3_4", "3_7", "3_8", 
+        "4_3", "4_4", "4_7", "4_8",
+        "9_5", "9_6", "10_5", "10_6" 
+    ]);
+
+    /* ----------------------------------------------------
+       2. 初始化臉部網格 (SVG)
+    ---------------------------------------------------- */
+    function initGrid() {
+        const gridGroup = document.getElementById('gridGroup');
+        gridGroup.innerHTML = '';
+        const cols = 12;
+        const rows = 13;
+        const w = 200 / cols;
+        const h = 260 / rows;
+
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                const id = `${r}_${c}`;
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', c * w);
+                rect.setAttribute('y', r * h);
+                rect.setAttribute('width', w);
+                rect.setAttribute('height', h);
+                rect.setAttribute('id', `cell_${id}`);
+                
+                if (forbiddenZones.has(id)) {
+                    rect.setAttribute('class', 'grid-cell grid-forbidden');
+                } else {
+                    rect.setAttribute('class', 'grid-cell');
+                    rect.addEventListener('click', () => toggleGrid(id));
+                }
+                gridGroup.appendChild(rect);
+            }
+        }
+        
+        // 預設選中螢幕左側（右臉頰）中間一格
+        selectedGrids.add("6_3");
+        
+        initLIOB();
+        recalc();
+    }
+
+    function toggleGrid(id) {
+        if (!document.getElementById('chk_single').checked) return; 
+        
+        if (selectedGrids.has(id)) {
+            selectedGrids.delete(id);
+        } else {
+            selectedGrids.add(id);
+        }
+        showToast(`已選定 ${selectedGrids.size} 格靶區`);
+        recalc();
+    }
+
+    function initLIOB() {
+        const der = document.getElementById('lyr_der');
+        for(let i=0; i<15; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'liob-bubble';
+            bubble.style.left = `${Math.random() * 90 + 5}%`;
+            bubble.style.top = `${Math.random() * 60 + 10}%`;
+            bubble.style.animationDelay = `${Math.random() * 2}s`;
+            bubble.id = `bubble_${i}`;
+            der.appendChild(bubble);
+        }
+    }
+
+    /* ----------------------------------------------------
+       3. 性別、面積控制與一鍵還原
+    ---------------------------------------------------- */
+    function setGender(gender) {
+        currentGender = gender;
+        
+        document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active', 'female', 'male'));
+        if(gender === 'female') {
+            document.querySelectorAll('.gender-btn')[0].classList.add('active', 'female');
+            document.getElementById('in_area').value = 300;
+            document.getElementById('faceBg').setAttribute('d', "M100,10 C150,10 180,60 180,120 C180,190 140,250 100,250 C60,250 20,190 20,120 C20,60 50,10 100,10 Z");
+            document.getElementById('gridGroup').setAttribute('clip-path', "url(#clip-female)");
+            
+            document.getElementById('lyr_epi').style.height = "30%";
+            document.getElementById('lyr_der').style.height = "70%";
+            document.documentElement.style.setProperty('--skin-epi-f', '#fbe3d9');
+            document.documentElement.style.setProperty('--skin-der-f', '#f5c8c5');
+        } else {
+            document.querySelectorAll('.gender-btn')[1].classList.add('active', 'male');
+            document.getElementById('in_area').value = 380;
+            document.getElementById('faceBg').setAttribute('d', "M100,10 C160,10 190,60 190,130 C190,200 150,250 120,250 L80,250 C50,250 10,200 10,130 C10,60 40,10 100,10 Z");
+            document.getElementById('gridGroup').setAttribute('clip-path', "url(#clip-male)");
+            
+            document.getElementById('lyr_epi').style.height = "36%";
+            document.getElementById('lyr_der').style.height = "64%";
+            document.documentElement.style.setProperty('--skin-epi-f', 'var(--skin-epi-m)');
+            document.documentElement.style.setProperty('--skin-der-f', 'var(--skin-der-m)');
+        }
+        recalc();
+    }
+
+    // 一鍵還原功能
+    function resetToDefault() {
+        // 1. 還原性別與面積 (切換到女性並自動重置面積)
+        setGender('female');
+        document.getElementById('in_area').value = 300;
+
+        // 2. 還原勾選狀態
+        document.getElementById('chk_net').checked = true;
+        document.getElementById('chk_hc').checked = true;
+        document.getElementById('chk_single').checked = true;
+
+        // 3. 還原發數
+        document.getElementById('in_net').value = 1000;
+        document.getElementById('in_hc').value = 1000;
+        document.getElementById('in_single').value = 20;
+
+        // 4. 還原網格選擇 (左臉中間：6_3)
+        selectedGrids.clear();
+        selectedGrids.add("6_3");
+
+        // 5. 更新 UI 樣式狀態
+        updateRowState('net');
+        updateRowState('honeycomb');
+        updateRowState('single');
+        
+        // 6. 重新計算並顯示提示
+        recalc();
+        showToast("🔄 已還原為預設教學參數");
+    }
+
+    function updateRowState(type) {
+        const isChecked = document.getElementById(`chk_${type}`).checked;
+        const row = document.getElementById(`row_${type}`);
+        
+        if (isChecked) {
+            row.classList.add('active');
+            if(type === 'single') row.classList.add('ladd-active');
+            if(type === 'single') {
+                document.getElementById('in_single').disabled = false;
+            } else {
+                document.getElementById(`in_${type === 'net' ? 'net' : 'hc'}`).disabled = false;
+            }
+        } else {
+            row.classList.remove('active');
+            row.classList.remove('ladd-active');
+            if(type === 'single') {
+                document.getElementById('in_single').disabled = true;
+            } else {
+                document.getElementById(`in_${type === 'net' ? 'net' : 'hc'}`).disabled = true;
+            }
+        }
+        recalc();
+    }
+
+    /* ----------------------------------------------------
+       4. 核心數學與視覺聯動演算
+    ---------------------------------------------------- */
+    function recalc() {
+        const chkNet = document.getElementById('chk_net').checked;
+        const chkHc = document.getElementById('chk_hc').checked;
+        const chkSingle = document.getElementById('chk_single').checked;
+
+        const sNet = chkNet ? (parseFloat(document.getElementById('in_net').value) || 0) : 0;
+        const sHc = chkHc ? (parseFloat(document.getElementById('in_hc').value) || 0) : 0;
+        const sSinglePer = chkSingle ? (parseFloat(document.getElementById('in_single').value) || 0) : 0;
+        
+        const gridCount = chkSingle ? selectedGrids.size : 0;
+        document.getElementById('ui_grid_count').innerText = gridCount;
+
+        let faceArea = parseFloat(document.getElementById('in_area').value) || 300;
+        if(faceArea < 100) faceArea = 100;
+
+        // 計算總焦耳
+        const sSingleTotal = sSinglePer * gridCount;
+        const jNet = sNet * J_NET;
+        const jHc = sHc * J_HC;
+        const jSingle = sSingleTotal * J_SGL;
+        const totalJ = jNet + jHc + jSingle;
+
+        // 計算單格分攤 (4cm²)
+        const baseGridJ = (jNet/faceArea*4) + (jHc/faceArea*4);
+        const singleGridJ = sSinglePer * J_SGL;
+        const maxGridJ = baseGridJ + singleGridJ;
+
+        // 倍數
+        let ratio = 0;
+        if (chkSingle && sSinglePer > 0) {
+            ratio = baseGridJ > 0 ? (singleGridJ / baseGridJ) : singleGridJ;
+        }
+
+        // --- 更新右側文字與數據 ---
+        let fStr = `(${sNet}×${J_NET}) + (${sHc}×${J_HC})`;
+        if(chkSingle) fStr += ` + (${gridCount}格×${sSinglePer}發×${J_SGL})`;
+        
+        document.getElementById('out_totalJ').innerHTML = `${totalJ.toFixed(1)} <span style="font-size:14px; color:#666; font-weight:normal;">J</span>`;
+        document.getElementById('out_formula').innerText = fStr;
+        document.getElementById('out_baseJ').innerHTML = `${baseGridJ.toFixed(1)} <span style="font-size:12px;">J</span>`;
+        
+        const outMaxEl = document.getElementById('out_maxJ');
+        outMaxEl.innerHTML = `${maxGridJ.toFixed(1)} <span style="font-size:14px; font-weight:normal;">J</span>`;
+        outMaxEl.className = "data-val " + (maxGridJ >= 160 ? "danger" : "ladd");
+
+        document.getElementById('out_ratio').innerHTML = `${ratio.toFixed(1)} <span style="font-size:14px; color:#666; font-weight:normal;">倍</span>`;
+
+        // --- 視覺聯動：巨觀臉部網格 ---
+        let baseColor = 'transparent';
+        if(baseGridJ > 0 && baseGridJ <= 10) baseColor = 'rgba(255, 179, 193, 0.6)'; 
+        if(baseGridJ > 10) baseColor = 'rgba(255, 143, 163, 0.7)'; 
+
+        document.querySelectorAll('.grid-cell:not(.grid-forbidden)').forEach(cell => {
+            const id = cell.id.replace('cell_', '');
+            if (chkSingle && selectedGrids.has(id)) {
+                if (maxGridJ >= 160) {
+                    cell.style.fill = '#1a1a1a'; 
+                    cell.style.stroke = 'red';
+                    cell.style.strokeWidth = '2';
+                } else if (maxGridJ > baseGridJ) {
+                    cell.style.fill = 'var(--ladd-color)'; 
+                    cell.style.stroke = 'rgba(255,255,255,0.4)';
+                } else {
+                    cell.style.fill = baseColor;
+                }
+            } else {
+                cell.style.fill = baseColor;
+                cell.style.stroke = 'rgba(255,255,255,0.4)';
+                cell.style.strokeWidth = '0.5'; // 恢復原本線條粗細
+            }
+        });
+
+        // --- 視覺聯動：微觀皮層剖面 ---
+        const anatomy = document.getElementById('anatomy');
+        const aLabel = document.getElementById('anatomy_label');
+        
+        anatomy.className = "anatomy-viewer"; 
+        
+        document.querySelectorAll('.liob-bubble').forEach(b => {
+            b.style.display = (chkHc && sHc > 0) ? 'block' : 'none';
+        });
+
+        if (chkSingle && gridCount > 0 && sSinglePer > 0) {
+            if (maxGridJ >= 160) {
+                anatomy.classList.add('state-danger');
+                aLabel.innerText = "❌ 警告：嚴重熱疊加，組織碳化壞死！";
+                aLabel.style.color = "var(--danger)";
+            } else {
+                anatomy.classList.add('state-ladd');
+                aLabel.innerText = "✨ LADD 黃金傳導通道已開啟";
+                aLabel.style.color = "var(--ladd-color)";
+            }
+        } else {
+            if (chkNet || chkHc) {
+                aLabel.innerText = "🟢 常規全臉保養狀態 (表皮微擾動)";
+                aLabel.style.color = "var(--primary)";
+            } else {
+                aLabel.innerText = "⚪ 待機中";
+                aLabel.style.color = "#666";
+            }
+        }
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.innerText = msg;
+        toast.style.opacity = 1;
+        setTimeout(() => toast.style.opacity = 0, 2000);
+    }
+
+    // 啟動
+    window.onload = () => {
+        initGrid();
+    };
+</script>
+
+</body>
+</html>
