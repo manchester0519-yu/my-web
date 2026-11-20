@@ -1,0 +1,2881 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#2C3E38">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="阪京親子遊">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%232C3E38'/%3E%3Cstop offset='100%25' stop-color='%23C85A32'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='112' fill='url(%23g)'/%3E%3Ctext x='256' y='265' font-size='210' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%8D%81%3C/text%3E%3Ctext x='256' y='430' font-family='sans-serif' font-weight='bold' font-size='56' fill='%23FFFFFF' text-anchor='middle'%3E2026%E9%98%AA%E4%BA%AC%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%232C3E38'/%3E%3Cstop offset='100%25' stop-color='%23C85A32'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='112' fill='url(%23g)'/%3E%3Ctext x='256' y='265' font-size='210' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%8D%81%3C/text%3E%3Ctext x='256' y='430' font-family='sans-serif' font-weight='bold' font-size='56' fill='%23FFFFFF' text-anchor='middle'%3E2026%E9%98%AA%E4%BA%AC%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%222026%20%E9%98%AA%E4%BA%AC%E8%A6%AA%E5%AD%90%E4%BA%94%E6%97%A5%E9%81%8A%22%2C%22short_name%22%3A%22%E9%98%AA%E4%BA%AC%E8%A6%AA%E5%AD%90%E9%81%8A%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23FAF7F2%22%2C%22theme_color%22%3A%22%232C3E38%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%2520viewBox%3D%270%25200%2520512%2520512%27%253E%253Crect%2520width%3D%27512%27%2520height%3D%27512%27%2520rx%3D%27112%27%2520fill%3D%27%25232C3E38%27%2F%253E%253Ctext%2520x%3D%27256%27%2520y%3D%27275%27%2520font-size%3D%27240%27%2520text-anchor%3D%27middle%27%2520dominant-baseline%3D%27central%27%253E%25F0%259F%258D%2581%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+<title>2026 阪京親子賞楓採買五日遊｜Chester・Nancy・魚寶</title>
+<style>
+  :root {
+    --bg-main: #FAF7F2;
+    --bg-card: #FFFFFF;
+    --bg-sub: #F3EDE4;
+    --primary: #C85A32;
+    --primary-light: #FDF0EB;
+    --primary-dark: #9E4120;
+    --sage: #3A6B5C;
+    --sage-light: #EBF3F0;
+    --amber: #C97A1E;
+    --amber-light: #FEF5E7;
+    --blue: #2B5B84;
+    --blue-light: #EBF2F8;
+    --danger: #B9382C;
+    --danger-light: #FDECEB;
+    --text-main: #24211E;
+    --text-sub: #5E5852;
+    --text-muted: #8C847C;
+    --border: #E6DFD5;
+    --shadow-sm: 0 2px 8px rgba(36, 33, 30, 0.05);
+    --shadow-md: 0 6px 20px rgba(36, 33, 30, 0.08);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --sticky-offset: 106px;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0 0 80px 0;
+    background: var(--bg-main);
+  }
+
+  /* Hero Header */
+  .hero {
+    background: linear-gradient(135deg, #2C3E38 0%, #3A5A4E 55%, #C85A32 140%);
+    color: #FFFFFF;
+    padding: 18px 16px 16px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(6px);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .hero-meta {
+    font-size: 12.5px;
+    opacity: 0.94;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-bottom: 10px;
+  }
+  .hero-hotel-bar {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 9px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .hero-hotel-info {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .hero-hotel-info strong {
+    font-size: 13.5px;
+    display: block;
+  }
+  .hero-hotel-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .hero-btn {
+    appearance: none;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: #FFFFFF;
+    color: var(--text-main);
+  }
+  .hero-btn.secondary {
+    background: rgba(0, 0, 0, 0.28);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  /* Dual Sticky Wrapper */
+  .sticky-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.2s ease;
+  }
+  .sticky-header-wrapper.scrolled {
+    box-shadow: 0 4px 16px rgba(36, 33, 30, 0.09);
+  }
+
+  /* Layer 1: Primary 6 Tabs (Preserved Layout) */
+  .main-nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+    padding: 7px 8px 5px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .nav-btn {
+    appearance: none;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--text-sub);
+    border-radius: 9px;
+    padding: 5px 1px;
+    min-height: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    letter-spacing: -0.2px;
+  }
+  .nav-btn .icon {
+    font-size: 14.5px;
+    line-height: 1;
+  }
+  .nav-btn.active {
+    background: var(--primary);
+    color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(200, 90, 50, 0.3);
+  }
+
+  /* Layer 2: Context-Aware Sub-Navigation */
+  .sub-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .sub-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .sub-pill {
+    flex: 0 0 auto;
+    appearance: none;
+    border: 1px solid var(--border);
+    background: #FFFFFF;
+    color: var(--text-sub);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .sub-pill.active {
+    background: var(--text-main);
+    color: #FFFFFF;
+    border-color: var(--text-main);
+  }
+  .sub-pill.today-pill {
+    border-color: var(--primary);
+    color: var(--primary-dark);
+    font-weight: 800;
+  }
+  .sub-pill.today-pill.active {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+
+  /* Main Container */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 14px 12px;
+  }
+  .tab-panel {
+    display: none;
+  }
+  .tab-panel.active {
+    display: block;
+  }
+
+  /* Anchor Section Target with Dynamic Scroll Margin */
+  .anchor-section {
+    scroll-margin-top: var(--sticky-offset);
+    margin-bottom: 18px;
+  }
+
+  /* Cards & Typography */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .day-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .day-badge.sage { background: var(--sage); }
+  .day-badge.blue { background: var(--blue); }
+  .day-badge.amber { background: var(--amber); }
+  .day-badge.danger { background: var(--danger); }
+
+  .section-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-subtitle {
+    font-size: 12.5px;
+    color: var(--text-sub);
+    margin: 3px 0 0 0;
+  }
+
+  /* Event Item inside Day Card */
+  .event-box {
+    background: #FCFBF9;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin-top: 10px;
+  }
+  .event-box.highlight {
+    background: var(--primary-light);
+    border-color: #E8B8A6;
+  }
+  .event-box.nap {
+    background: var(--sage-light);
+    border-color: #B9D4CA;
+  }
+  .event-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .time-chip {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .event-box.nap .time-chip {
+    background: #D6E8E1;
+    color: #23493D;
+  }
+  .tag-chip {
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: var(--bg-sub);
+    color: var(--text-sub);
+  }
+  .tag-chip.green { background: var(--sage-light); color: var(--sage); }
+  .tag-chip.amber { background: var(--amber-light); color: var(--amber); }
+  .tag-chip.red { background: var(--danger-light); color: var(--danger); }
+
+  .event-title {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    color: var(--text-main);
+  }
+  .event-desc {
+    font-size: 13.5px;
+    color: var(--text-sub);
+    margin: 0;
+  }
+  .scan-list {
+    list-style: none;
+    margin: 6px 0 0 0;
+    padding: 0;
+  }
+  .scan-list li {
+    margin-bottom: 5px;
+    line-height: 1.48;
+  }
+  .scan-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 5px;
+    background: var(--bg-sub);
+    color: var(--text-main);
+    margin-right: 4px;
+  }
+  .scan-tag.warn {
+    background: var(--danger-light);
+    color: var(--danger);
+  }
+  .scan-tag.ok {
+    background: var(--sage-light);
+    color: var(--sage);
+  }
+
+  /* Action Button Row */
+  .btn-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .btn-row.even {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-row.single {
+    grid-template-columns: 1fr;
+  }
+  .btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: #FFFFFF;
+    color: var(--text-main);
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.15s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+  .btn-sage {
+    background: var(--sage);
+    color: #FFFFFF;
+    border-color: var(--sage);
+  }
+  .btn-danger {
+    background: var(--danger);
+    color: #FFFFFF;
+    border-color: var(--danger);
+  }
+  .btn-driver {
+    background: var(--text-main);
+    color: #FFFFFF;
+    border-color: var(--text-main);
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+  .btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* Flight Pill Bar inside D1/D5 */
+  .flight-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid #E8B8A6;
+    border-radius: 9px;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    flex-wrap: wrap;
+  }
+  .flight-code-input {
+    width: 96px;
+    padding: 3px 7px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    background: #FCFBF9;
+  }
+
+  /* D3 Weather Toggle Switch */
+  .weather-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--bg-sub);
+    padding: 4px;
+    border-radius: 12px;
+    gap: 4px;
+    margin: 10px 0 4px;
+  }
+  .weather-opt {
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 8px 6px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-sub);
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+  .weather-opt.active.sunny {
+    background: #FFFFFF;
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+  }
+  .weather-opt.active.rainy {
+    background: #FFFFFF;
+    color: var(--blue);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Voucher Card (Tower of the Sun) */
+  .voucher-box {
+    background: #FFF9F5;
+    border: 1.5px dashed var(--primary);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin-top: 8px;
+  }
+  .voucher-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12.5px;
+  }
+  .voucher-item {
+    background: #FFFFFF;
+    padding: 7px 9px;
+    border-radius: 8px;
+    border: 1px solid #F0DFD8;
+  }
+  .voucher-label {
+    color: var(--text-muted);
+    font-size: 11px;
+    display: block;
+  }
+  .voucher-val {
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  /* Editable Group Memo & Insurance Fields */
+  .memo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .memo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .memo-field label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text-sub);
+  }
+  .memo-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13.5px;
+    background: #FCFBF9;
+    color: var(--text-main);
+    font-family: inherit;
+  }
+  .memo-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #FFFFFF;
+  }
+
+  /* Emergency Call Grid */
+  .emg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .emg-call-card {
+    background: #FFFFFF;
+    border: 1px solid #EBC2BE;
+    border-radius: 11px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .emg-call-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-sub);
+  }
+  .emg-call-num {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--danger);
+    letter-spacing: 0.3px;
+  }
+
+  /* Dining Price Pills */
+  .price-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .price-pill {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 8px;
+    background: var(--amber-light);
+    color: #8A500C;
+  }
+  .price-pill.free {
+    background: var(--sage-light);
+    color: var(--sage);
+  }
+  .price-pill.total {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+  }
+
+  /* Copy Phrase Card */
+  .phrase-card {
+    background: var(--bg-sub);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .phrase-jp {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+  .phrase-zh {
+    font-size: 12px;
+    color: var(--text-sub);
+  }
+
+  /* Currency Converter Box */
+  .fx-box {
+    background: linear-gradient(135deg, #2C3E38, #3A6B5C);
+    color: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  .fx-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .fx-input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-main);
+    background: #FFFFFF;
+  }
+  .fx-rate-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    opacity: 0.92;
+  }
+
+  /* Tax-Free Accumulator Mini Tool */
+  .tax-calc-box {
+    background: #FFFFFF;
+    border: 1px solid #E5B97E;
+    border-radius: 11px;
+    padding: 10px 12px;
+    margin-top: 10px;
+  }
+  .tax-calc-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .tax-progress-bar {
+    height: 8px;
+    background: #F0E4D2;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 8px 0 4px;
+  }
+  .tax-progress-fill {
+    height: 100%;
+    background: var(--amber);
+    width: 0%;
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+  .tax-progress-fill.done {
+    background: var(--sage);
+  }
+
+  /* Collapsible Add Form & Compact Toolbar */
+  .collapsible-panel {
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
+  }
+  .collapsible-panel.open {
+    display: block;
+    animation: fadeDown 0.18s ease;
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .add-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .form-input, .form-select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 13.5px;
+    background: #FCFBF9;
+    color: var(--text-main);
+    font-family: inherit;
+  }
+  .toolbar-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #FFFFFF;
+    padding: 9px 11px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+  }
+  .search-box {
+    flex: 1 1 130px;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    background: #FCFBF9;
+  }
+  .toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+    user-select: none;
+  }
+  .toggle-label input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 4px;
+    border-bottom: 1px solid #F0EAE1;
+    transition: opacity 0.15s ease;
+  }
+  .check-item:last-child {
+    border-bottom: none;
+    padding-bottom: 2px;
+  }
+  .check-item.checked {
+    opacity: 0.52;
+  }
+  .check-item.checked .item-name {
+    text-decoration: line-through;
+  }
+  .check-item.hidden-by-filter {
+    display: none;
+  }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .item-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .item-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+    word-break: break-word;
+  }
+  .item-note {
+    font-size: 12px;
+    color: var(--text-sub);
+    margin-top: 2px;
+  }
+  .del-btn {
+    appearance: none;
+    border: none;
+    background: var(--danger-light);
+    color: var(--danger);
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Modal (Driver Card & Backup) */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 18, 16, 0.72);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-backdrop.open {
+    display: flex;
+  }
+  .modal-card {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+    animation: popIn 0.18s ease;
+  }
+  @keyframes popIn {
+    from { transform: scale(0.94); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .driver-jp-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 8px 0;
+    line-height: 1.3;
+  }
+  .driver-jp-addr {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: var(--primary-light);
+    padding: 12px;
+    border-radius: 12px;
+    margin: 10px 0;
+    line-height: 1.45;
+  }
+  .driver-note {
+    font-size: 13.5px;
+    color: var(--text-sub);
+    margin-bottom: 14px;
+  }
+
+  /* Toast Notification */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #24211E;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.22s ease;
+    z-index: 1200;
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  /* Passcode Lock Overlay */
+  .lock-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(145deg, #24332E 0%, #3A5A4E 60%, #9E4120 140%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #FFFFFF;
+  }
+  .lock-screen.unlocked {
+    display: none;
+  }
+  .lock-card {
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--text-main);
+    width: 100%;
+    max-width: 360px;
+    border-radius: 24px;
+    padding: 24px 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    text-align: center;
+  }
+  .lock-icon {
+    font-size: 40px;
+    margin-bottom: 6px;
+  }
+  .lock-title {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+  }
+  .lock-sub {
+    font-size: 12.5px;
+    color: var(--text-sub);
+    margin: 0 0 16px 0;
+  }
+  .lock-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-align: center;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: #FCFBF9;
+    color: var(--text-main);
+    margin-bottom: 10px;
+  }
+  .lock-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #FFFFFF;
+  }
+  .lock-err {
+    color: var(--danger);
+    font-size: 12.5px;
+    font-weight: 700;
+    min-height: 18px;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Passcode Lock Screen Overlay -->
+<div class="lock-screen" id="lockScreen">
+  <div class="lock-card">
+    <div class="lock-icon">🍁🔐</div>
+    <h2 class="lock-title">2026 阪京親子五日遊</h2>
+    <p class="lock-sub">為保護接送地址、預約編號與領隊電話，<br>請輸入通關密碼解鎖（本機只需輸入一次）</p>
+    <input class="lock-input" id="passcodeInput" type="password" inputmode="numeric" maxlength="12" placeholder="••••" onkeydown="if(event.key==='Enter') unlockApp()">
+    <div class="lock-err" id="lockErr"></div>
+    <button class="btn btn-primary" style="width:100%; padding:12px; font-size:15px;" onclick="unlockApp()">🔓 解鎖隨身手冊</button>
+    <div style="font-size:11.5px; color:var(--text-muted); margin-top:10px;">💡 提示：魚寶生日 4 碼</div>
+  </div>
+</div>
+
+
+<header class="hero">
+  <div class="hero-badge">🍁 2026 百商員工旅遊｜親子賞楓採買全攻略</div>
+  <h1>大阪・京都 五天四夜隨身手冊</h1>
+  <div class="hero-meta">
+    <span>📅 2026/11/27 (五) – 12/01 (二)</span>
+    <span>👨‍👩‍👧 Chester・Nancy・魚寶 (1歲8個月)</span>
+  </div>
+
+  <!-- Top Pinned Hotel Address & Google Maps Quick Bar -->
+  <div class="hero-hotel-bar">
+    <div class="hero-hotel-info">
+      <strong>🏨 下榻飯店：Hotel Plaza Osaka（ホテルプラザオーサカ）</strong>
+      <span>📍 <span data-enc="SENS_HOTEL_ADDR_SHORT">鎖定中</span>（阪急十三站西口步行 5–7 分鐘）</span>
+    </div>
+    <div class="hero-hotel-actions">
+      <a class="hero-btn" href="https://www.google.com/maps/search/?api=1&query=Hotel+Plaza+Osaka+1-9-15+Shinkitano+Yodogawa+Ward+Osaka" target="_blank" rel="noopener">🗺️ 開啟 Google Maps 導航</a>
+      <button class="hero-btn secondary" onclick="showDriverEncrypted('ホテルプラザオーサカ（Hotel Plaza Osaka）', 'SENS_HOTEL_ADDR_SHORT', 'SENS_HOTEL_NOTE')">🚕 給司機看</button>
+      <button class="hero-btn secondary" onclick="copyEncrypted('SENS_HOTEL_ADDR_COPY', '📋 已複製飯店日文地址！')">📋 複製地址</button>
+      <button class="hero-btn secondary" onclick="lockApp()">🔒 鎖定隱私</button>
+    </div>
+  </div>
+</header>
+
+<!-- Dual-Layer Sticky Navigation (6 Primary Tabs Preserved) -->
+<div class="sticky-header-wrapper" id="stickyWrapper">
+  <nav class="main-nav" role="tablist">
+    <button class="nav-btn active" data-tab="itinerary" onclick="switchTab('itinerary')">
+      <span class="icon">🗺️</span>
+      <span>行程</span>
+    </button>
+    <button class="nav-btn" data-tab="dining" onclick="switchTab('dining')">
+      <span class="icon">🍜</span>
+      <span>餐飲</span>
+    </button>
+    <button class="nav-btn" data-tab="weather" onclick="switchTab('weather')">
+      <span class="icon">🧥</span>
+      <span>穿搭</span>
+    </button>
+    <button class="nav-btn" data-tab="shopping" onclick="switchTab('shopping')">
+      <span class="icon">🛍️</span>
+      <span id="navShopLabel">採買 0%</span>
+    </button>
+    <button class="nav-btn" data-tab="packing" onclick="switchTab('packing')">
+      <span class="icon">🧳</span>
+      <span id="navPackLabel">打包 0%</span>
+    </button>
+    <button class="nav-btn" data-tab="info" onclick="switchTab('info')">
+      <span class="icon">🏥</span>
+      <span>員旅醫療</span>
+    </button>
+  </nav>
+  <div class="sub-nav" id="subNavContainer"></div>
+</div>
+
+<main class="container">
+
+  <!-- ==================== TAB 1: 行程 ==================== -->
+  <section id="tab-itinerary" class="tab-panel active">
+
+    <!-- D1 -->
+    <div id="itin-d1" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge">D1</span> 11/27（五）抵達大阪 ➔ 梅田旗艦店</h2>
+            <p class="section-subtitle">早班機抵達先補眠，傍晚輕鬆逛無印與木育廣場</p>
+          </div>
+        </div>
+
+        <div class="event-box highlight">
+          <div class="event-top">
+            <span class="time-chip">04:30 集合 ➔ 06:30 起飛</span>
+            <span class="tag-chip red">桃園二航 3F 長榮 20 號櫃台</span>
+          </div>
+          <h3 class="event-title">出發前往關西國際機場（09:55 抵達）</h3>
+
+          <!-- Flight Info Bar -->
+          <div class="flight-bar">
+            <span>✈️ <strong>長榮航空</strong> 航班編號：<input class="flight-code-input" id="flightOutCode" value="BR178" oninput="saveFlightCodes()"></span>
+            <span style="color:var(--text-sub); font-size:12px;">桃園 T2 ➔ 關西 T1｜託運 1件限23kg</span>
+          </div>
+
+          <!-- UGO Outbound Card inside D1 -->
+          <div style="background:#FFFFFF; border:1px solid #E8B8A6; border-radius:10px; padding:10px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px; margin-bottom:6px;">
+              <strong style="font-size:13px; color:var(--primary-dark);">🚐 UGO 機場接送（去程｜11/27 03:50）</strong>
+              <span class="tag-chip green">前一日簡訊通知司機</span>
+            </div>
+            <div style="font-size:12.5px; color:var(--text-sub); margin-bottom:6px;">
+              📍 上車：<strong data-enc="SENS_HOME_ADDR">鎖定中</strong> ➔ TPE 桃園國際機場
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:6px;">
+              <input class="memo-input" id="ugoOutDriver" placeholder="司機姓名 (如: 陳先生)" style="font-size:12.5px; padding:6px 8px;" oninput="syncUgo('out')">
+              <input class="memo-input" id="ugoOutPlate" placeholder="車牌號碼 (如: RAA-8888)" style="font-size:12.5px; padding:6px 8px;" oninput="syncUgo('out')">
+            </div>
+            <div style="display:grid; grid-template-columns:1fr auto; gap:6px;">
+              <input class="memo-input" id="ugoOutPhone" type="tel" placeholder="司機電話 (輸入後可一鍵直撥)" style="font-size:12.5px; padding:6px 8px;" oninput="syncUgo('out')">
+              <a class="btn btn-primary btn-sm" id="ugoOutCallBtn" href="tel:" onclick="return checkUgoCall('out')">📞 直撥司機</a>
+            </div>
+          </div>
+
+          <ul class="scan-list">
+            <li><span class="scan-tag warn">集合</span><strong>04:30</strong> 桃園機場第二航廈 3F 長榮 20 號櫃台報到。</li>
+            <li><span class="scan-tag">行李</span>免費託運 <strong>1 件限 23 公斤</strong>；魚寶飲用水、常溫奶／果泥可隨身過安檢，食物剪刀與蠟筆<strong>放託運</strong>。</li>
+            <li><span class="scan-tag ok">抵達</span>09:55 抵關西空港 ➔ 專車回飯店寄放行李，1F 水晶自助餐廳吃午餐。</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport" target="_blank" rel="noopener">📍 開啟關西空港導航</a>
+            <button class="btn btn-driver" onclick="showDriver('関西国際空港（KIX）', '〒549-0001 大阪府泉佐野市泉州空港北1', '第1ターミナル 到着ロビー')">🚕 給司機看</button>
+          </div>
+        </div>
+
+        <div class="event-box nap">
+          <div class="event-top">
+            <span class="time-chip">13:00 – 15:00 魚寶黃金午睡窗</span>
+            <span class="tag-chip green">飯店休整＋車站電梯動線</span>
+          </div>
+          <h3 class="event-title">Hotel Plaza Osaka 辦理入住與午休</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag ok">補眠</span>15:00 進房讓 04:30 早起的魚寶小睡 1.5–2 小時，大人同步整理推車。</li>
+            <li><span class="scan-tag warn">電梯</span>步行至<strong>阪急十三站</strong>約 5–7 分鐘。「1號月台（往梅田）」與「3/4號月台（往京都/北千里）」各有獨立剪票口與電梯。</li>
+            <li><span class="scan-tag">補給</span>十三站西口商店街有 24 小時 Tamade 超市及松本清／大國藥妝，可買鮮奶、優格與香蕉。</li>
+          </ul>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">15:30 – 20:00</span>
+            <span class="tag-chip green">阪急 1 站（3分鐘）即達</span>
+          </div>
+          <h3 class="event-title">梅田 Grand Front Osaka 北館 2F–4F</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag">採買</span><strong>無印良品旗艦店（2F–4F）：</strong>先買魚寶 90/100cm 無側縫睡衣、易穿脫上衣、13–15cm 防滑襪與可擦拭蠟筆。</li>
+            <li><span class="scan-tag ok">放電</span><strong>4F 木育廣場 & Baby Room：</strong>魚寶脫鞋玩木製遊具，同層樓有完善哺乳室與熱水機，晚餐於館內享用。</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Grand+Front+Osaka" target="_blank" rel="noopener">📍 開啟 Grand Front 導航</a>
+            <button class="btn btn-driver" onclick="showDriver('グランフロント大阪 北館（Grand Front Osaka）', '〒530-0011 大阪府大阪市北区大深町4-20', '無印良品 2F-4F / 授乳室 4F')">🚕 給司機看</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D2 -->
+    <div id="itin-d2" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge">D2</span> 11/28（六）【跟團巴士】天橋立 ➔ 伊根舟屋</h2>
+            <p class="section-subtitle">海之京都一日遊｜含午餐若峽灣海鮮定食</p>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">08:30 – 13:30</span>
+            <span class="tag-chip amber">海邊風大・必穿防風外套</span>
+          </div>
+          <h3 class="event-title">天橋立傘松公園・智恩寺・迴旋橋</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag warn">纜車</span>帶 1 歲 8 個月魚寶請優先搭乘<strong>箱型纜車（Cable Car）</strong>上傘松公園，避開無護欄的單人吊椅。</li>
+            <li><span class="scan-tag">安撫</span>單程車程約 2 小時，媽媽包備足和光堂米餅、防掉零食杯與貼紙書。</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Amanohashidate+Kasamatsu+Park" target="_blank" rel="noopener">📍 天橋立傘松公園地圖</a>
+            <button class="btn btn-driver" onclick="showDriver('天橋立 傘松公園', '〒629-2242 京都府宮津市大垣75', 'ケーブルカー府中駅')">🚕 顯示日文</button>
+          </div>
+        </div>
+
+        <div class="event-box nap">
+          <div class="event-top">
+            <span class="time-chip">13:30 – 18:00（含巴士午睡窗）</span>
+            <span class="tag-chip green">午：若峽灣海鮮定食＋鮑魚乙顆</span>
+          </div>
+          <h3 class="event-title">伊根舟屋群漫步 ➔ 免稅店 ➔ 返回大阪</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag">午餐</span><strong>若峽灣日式海鮮定食＋鮑魚乙顆</strong>（或季節料理和風膳食），可分白飯、蒸蛋與熟魚肉給魚寶。</li>
+            <li><span class="scan-tag ok">午睡</span><strong>13:30–15:00 巴士午睡窗：</strong>午後上遊覽車往免稅店途中讓魚寶補眠（車上暖氣強，記得先脫厚外套）。</li>
+            <li><span class="scan-tag">晚餐</span>晚餐自理，返抵飯店後步行 5 分鐘至 <strong>Gusto 十三站西口店</strong>吃熱食最省力。</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ine+Funaya" target="_blank" rel="noopener">📍 伊根舟屋地圖</a>
+            <button class="btn btn-driver" onclick="showDriver('伊根の舟屋（伊根湾）', '〒626-0423 京都府与謝郡伊根町平田', '伊根湾めぐり遊覧船・舟屋群')">🚕 顯示日文</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D3 -->
+    <div id="itin-d3" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge">D3</span> 11/29（日）京都賞楓 ／ 雨天室內備案</h2>
+            <p class="section-subtitle">一鍵切換當日天氣模式，避免看錯轉乘動線</p>
+          </div>
+        </div>
+
+        <div class="weather-toggle">
+          <button class="weather-opt sunny active" id="btnD3Sunny" onclick="setD3Mode('sunny')">☀️ 晴天京都主案（梅小路）</button>
+          <button class="weather-opt rainy" id="btnD3Rainy" onclick="setD3Mode('rainy')">☔ 雨天大阪備案（A案）</button>
+        </div>
+
+        <!-- D3 Sunny Content -->
+        <div id="d3SunnyBlock">
+          <div class="event-box">
+            <div class="event-top">
+              <span class="time-chip">09:30 – 11:30</span>
+              <span class="tag-chip green">全區推車平坦無障礙</span>
+            </div>
+            <h3 class="event-title">京都梅小路公園紅葉祭 ＆ 市電廣場</h3>
+            <ul class="scan-list">
+              <li><span class="scan-tag">交通</span>十三站搭阪急京都線特急至「桂站」或「大宮站」轉計程車約 10 分鐘直達（或轉 JR 至「梅小路京都西站」出站即有電梯）。</li>
+              <li><span class="scan-tag ok">亮點</span>寬闊草地與楓紅大道拍全家福，市電廣場旁兒童遊具區玩溜滑梯。</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Umekoji+Park+Kyoto" target="_blank" rel="noopener">📍 梅小路公園導航</a>
+              <button class="btn btn-driver" onclick="showDriver('梅小路公園（JR梅小路京都西駅前）', '〒600-8835 京都府京都市下京区観喜寺町56-3', '運転手さんへ：梅小路京都西駅のロータリーまでお願いします')">🚕 給計程車司機看</button>
+            </div>
+          </div>
+
+          <div class="event-box nap">
+            <div class="event-top">
+              <span class="time-chip">11:30 – 18:00（13:00 推車午睡）</span>
+              <span class="tag-chip amber">朱雀之庭點燈最終日</span>
+            </div>
+            <h3 class="event-title">京都鐵道博物館（或京都水族館）＋ 夜間點燈</h3>
+            <ul class="scan-list">
+              <li><span class="scan-tag">二選一</span>步行 3 分鐘切換：<strong>① 京都鐵道博物館</strong>（2F Kids Park、新幹線便當、哺乳室）或 <strong>② 京都水族館</strong>（水母萬花筒、企鵝）。</li>
+              <li><span class="scan-tag ok">午睡</span>13:00–14:30 推車在公園林蔭道散步讓魚寶午睡，大人去「市電咖啡廳」喝熱咖啡。</li>
+              <li><span class="scan-tag warn">點燈</span>17:00 趕上<strong>朱雀之庭紅葉點燈最終日</strong>（傍晚降至 7°C 務必加穿外套與毛毯）。</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Railway+Museum" target="_blank" rel="noopener">📍 京都鐵道博物館導航</a>
+              <button class="btn btn-driver" onclick="showDriver('京都鉄道博物館 ／ 京都水族館', '〒600-8835 京都府京都市下京区観喜寺町', '梅小路公園内（ベビーカー利用）')">🚕 給司機看</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- D3 Rainy Content -->
+        <div id="d3RainyBlock" style="display:none;">
+          <div class="event-box highlight" style="background: var(--blue-light); border-color: #B8D0E6;">
+            <div class="event-top">
+              <span class="time-chip" style="background:#D5E5F3; color:#1E4568;">09:30 – 16:30（全室內暖氣）</span>
+              <span class="tag-chip green">大人 ¥1,500｜3歲以下魚寶免費</span>
+            </div>
+            <h3 class="event-title">【雨天 A 案】Kids Plaza Osaka 大阪兒童樂園</h3>
+            <ul class="scan-list">
+              <li><span class="scan-tag">交通</span>十三站搭阪急至「天神橋筋六丁目站」，轉地鐵堺筋線至「扇町站」（<strong>2 號出口電梯直達</strong>）。</li>
+              <li><span class="scan-tag ok">攻略</span>主攻 <strong>3F「Peek-a-Boo」0–2 歲軟墊安全區</strong>，館內哺乳室、調乳熱水機與推車區齊全。</li>
+              <li><span class="scan-tag">午餐</span>中午憑手章自由進出，步行 1 分鐘到有遮雨棚的「天神橋筋商店街」吃烏龍麵。</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" style="background:var(--blue); border-color:var(--blue);" href="https://www.google.com/maps/search/?api=1&query=Kids+Plaza+Osaka" target="_blank" rel="noopener">📍 Kids Plaza Osaka 導航</a>
+              <button class="btn btn-driver" onclick="showDriver('キッズプラザ大阪（Kids Plaza Osaka）', '〒530-0025 大阪府大阪市北区扇町2-1-7', '地下鉄堺筋線 扇町駅 2番出口すぐ')">🚕 給司機看</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D4 -->
+    <div id="itin-d4" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge">D4</span> 11/30（一）太陽之塔 ➔ NIFREL ➔ EXPOCITY</h2>
+            <p class="section-subtitle">建議 08:45 出發避開通勤尖峰，一棟全包親子放電與採買</p>
+          </div>
+        </div>
+
+        <div class="event-box highlight">
+          <div class="event-top">
+            <span class="time-chip">09:40 報到 ➔ 10:00 場次</span>
+            <span class="tag-chip red">推車停室外・必帶背巾！</span>
+          </div>
+          <h3 class="event-title">太陽之塔內部參觀 ＆ 萬博紀念公園賞楓</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag">交通</span>08:45 避開早高峰從十三站搭阪急京都線至「南茨木站」，轉大阪單軌電車至「萬博紀念公園站」（全程電梯無障礙）。</li>
+            <li><span class="scan-tag warn">鐵則</span>① 提前 20 分鐘（09:40）於塔下報到出示 QR Code；② <strong>嬰兒車嚴禁入塔</strong>（停室外置放區），務必用背巾抱魚寶搭電梯；③ 塔內無廁所，入塔前先換尿布。</li>
+          </ul>
+
+          <!-- Official Reservation Voucher Box with Live QR Code URL -->
+          <div class="voucher-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">
+              <strong style="font-size:13px; color:var(--primary-dark);">🎫 太陽之塔官方預約憑證（已付 ¥5,400）</strong>
+              <button class="btn btn-sm" onclick="copyEncrypted('SENS_TOWER_NO', '已複製預約編號！')">📋 複製編號</button>
+            </div>
+            <div class="voucher-grid">
+              <div class="voucher-item">
+                <span class="voucher-label">預訂編號 (Reservation No.)</span>
+                <span class="voucher-val" style="font-size:11.5px; word-break:break-all;" data-enc="SENS_TOWER_NO">鎖定中</span>
+              </div>
+              <div class="voucher-item">
+                <span class="voucher-label">預約日期 / 時間 / 總金額</span>
+                <span class="voucher-val">11/30 10:00｜¥5,400</span>
+              </div>
+              <div class="voucher-item">
+                <span class="voucher-label">搭乘電梯（Elevator）</span>
+                <span class="voucher-val" style="color:var(--primary);">成人 2 人 ＋ 嬰兒 1 人</span>
+              </div>
+              <div class="voucher-item">
+                <span class="voucher-label">使用樓梯（Stairs）</span>
+                <span class="voucher-val">成人 3 人（總計 6 人）</span>
+              </div>
+            </div>
+            <div style="margin-top:8px;">
+              <a class="btn btn-primary" style="width:100%; background:#9E4120; border-color:#9E4120;" id="towerQrLink" href="#" target="_blank" rel="noopener">📱 開啟官方現場二維碼 QR Code（售票處取票用）</a>
+            </div>
+            <div style="font-size:11.5px; color:var(--danger); font-weight:700; margin-top:6px; line-height:1.4;">
+              ⚠️ 官方規定：售票處取票需開啟上方網頁顯示動態二維碼（不可用截圖）；館內無置物櫃，大件包包請寄放園區投幣式置物櫃。
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Tower+of+the+Sun+Suita+Osaka" target="_blank" rel="noopener">📍 開啟太陽之塔導航</a>
+            <button class="btn btn-driver" onclick="showDriver('万博記念公園 太陽の塔', '〒565-0826 大阪府吹田市千里万博公園1-1', '内部観覧予約 10:00回（エレベーター利用）')">🚕 給司機看</button>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">11:30 – 13:30</span>
+            <span class="tag-chip green">全館推車可直接推進去</span>
+          </div>
+          <h3 class="event-title">NIFREL 活生生博物館 ➔ 大起水產午餐</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag ok">體驗</span>無柵欄觀察水豚、環尾狐猴、企鵝、白虎與 WONDER MOMENTS 宇宙光影球。</li>
+            <li><span class="scan-tag">午餐</span>12:30 出館步行 1 分鐘進 LaLaport EXPOCITY 1F「大起水產迴轉壽司」抽號碼牌用餐。</li>
+          </ul>
+          <div class="btn-row single">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=NIFREL+Suita+Osaka" target="_blank" rel="noopener">📍 開啟 NIFREL 導航</a>
+          </div>
+        </div>
+
+        <div class="event-box nap">
+          <div class="event-top">
+            <span class="time-chip">13:30 – 19:30（13:30 推車午睡）</span>
+            <span class="tag-chip amber">3F 阿卡將旁有超強 Baby Room</span>
+          </div>
+          <h3 class="event-title">LaLaport EXPOCITY 三大主力品牌採買＋晚餐</h3>
+          <ul class="scan-list">
+            <li><span class="scan-tag ok">節奏</span>13:30 吃飽後魚寶在推車午睡，夫妻可分頭逛 <strong>3F Workman Colors</strong> 與 <strong>1F 無印良品</strong>；等魚寶醒來一起去 <strong>3F 阿卡將本鋪</strong>試穿童鞋。</li>
+            <li><span class="scan-tag">設施</span>3F 阿卡將旁備有 70°C 調乳熱水機與獨立哺乳室；晚餐直接在 3F 美食街（幼兒脫鞋軟墊區）解決。</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-sage" href="https://www.google.com/maps/search/?api=1&query=LaLaport+EXPOCITY" target="_blank" rel="noopener">📍 LaLaport EXPOCITY 導航</a>
+            <button class="btn btn-driver" onclick="showDriver('ららぽーとEXPOCITY（LaLaport EXPOCITY）', '〒565-0826 大阪府吹田市千里万博公園2-1', '3F アカチャンホンポ・WORKMAN / 1F 無印良品・大起水産')">🚕 給司機看</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D5 -->
+    <div id="itin-d5" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge">D5</span> 12/01（二）關西空港退稅通關 ➔ 返台</h2>
+            <p class="section-subtitle">10:55 起飛｜13:10 抵達桃園機場</p>
+          </div>
+        </div>
+
+        <div class="event-box highlight">
+          <div class="event-top">
+            <span class="time-chip">08:25 前抵機場 ➔ 10:55 起飛</span>
+            <span class="tag-chip red">2026 免稅新制：先海關核驗再託運！</span>
+          </div>
+          <h3 class="event-title">飯店早餐 ➔ 專車前往關西國際機場</h3>
+
+          <!-- Return Flight Info Bar -->
+          <div class="flight-bar">
+            <span>✈️ <strong>長榮航空</strong> 航班編號：<input class="flight-code-input" id="flightInCode" value="BR177" oninput="saveFlightCodes()"></span>
+            <span style="color:var(--text-sub); font-size:12px;">關西 T1 ➔ 桃園 T2｜10:55 起飛</span>
+          </div>
+
+          <ul class="scan-list" style="margin-bottom:8px;">
+            <li><span class="scan-tag">打包</span>常溫調理包、果凍飲、寶寶醬油、無印蠟筆與食物剪刀<strong>全數放託運行李箱</strong>；厚外套塞行李箱，留薄外套隨身（桃園約 21°C）。</li>
+            <li><span class="scan-tag warn">退稅</span>① 先帶護照、免稅收據與未拆封商品到機場海關 KIOSK 終端機核驗退稅 ➔ ② 再去航空櫃台託運行李 ➔ ③ 出境後於航廈免稅店買伴手禮直接提上機。</li>
+          </ul>
+
+          <!-- UGO Return Card inside D5 -->
+          <div style="background:#FFFFFF; border:1px solid #E8B8A6; border-radius:10px; padding:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px; margin-bottom:6px;">
+              <strong style="font-size:13px; color:var(--primary-dark);">🚐 UGO 機場接送（回程｜12/01 13:10 抵台）</strong>
+              <span class="tag-chip green">11/30 前一日簡訊通知</span>
+            </div>
+            <div style="font-size:12.5px; color:var(--text-sub); margin-bottom:6px;">
+              📍 桃園國際機場 ➔ <strong data-enc="SENS_HOME_ADDR">鎖定中</strong>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:6px;">
+              <input class="memo-input" id="ugoInDriver" placeholder="回程司機姓名" style="font-size:12.5px; padding:6px 8px;" oninput="syncUgo('in')">
+              <input class="memo-input" id="ugoInPlate" placeholder="回程車牌號碼" style="font-size:12.5px; padding:6px 8px;" oninput="syncUgo('in')">
+            </div>
+            <div style="display:grid; grid-template-columns:1fr auto; gap:6px;">
+              <input class="memo-input" id="ugoInPhone" type="tel" placeholder="回程司機電話 (輸入後可直撥)" style="font-size:12.5px; padding:6px 8px;" oninput="syncUgo('in')">
+              <a class="btn btn-primary btn-sm" id="ugoInCallBtn" href="tel:" onclick="return checkUgoCall('in')">📞 直撥司機</a>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport+Terminal+1" target="_blank" rel="noopener">📍 開啟關西空港導航</a>
+            <button class="btn btn-driver" onclick="showDriver('関西国際空港 第1ターミナル（国際線出発）', '〒549-0001 大阪府泉佐野市泉州空港北1', '4F 国際線出発フロア')">🚕 給司機看</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== TAB 2: 餐飲 ==================== -->
+  <section id="tab-dining" class="tab-panel">
+
+    <!-- Budget & Live FX Converter -->
+    <div id="dine-budget" class="anchor-section">
+      <div class="fx-box">
+        <div class="fx-rate-bar">
+          <strong>💱 即時匯率換算小工具（JPY ⇄ TWD）</strong>
+          <span>匯率：<input id="fxRateInput" type="number" step="0.001" value="0.215" style="width:58px; border-radius:5px; border:none; padding:2px 4px; font-weight:700; text-align:center;" oninput="convertFx('jpy')"></span>
+        </div>
+        <div class="fx-row">
+          <div>
+            <div style="font-size:11px; opacity:0.85; margin-bottom:2px;">日圓 JPY (¥)</div>
+            <input class="fx-input" id="fxJpy" type="number" placeholder="5000" oninput="convertFx('jpy')">
+          </div>
+          <div style="font-weight:900; font-size:16px; padding-top:14px;">⇄</div>
+          <div>
+            <div style="font-size:11px; opacity:0.85; margin-bottom:2px;">台幣 TWD ($)</div>
+            <input class="fx-input" id="fxTwd" type="number" placeholder="1075" oninput="convertFx('twd')">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge amber">餐飲總預算</span> 五日自理正餐估算</h2>
+        </div>
+        <p class="event-desc">
+          一家三口 5 天所有自理正餐（含 D1 午餐至 D5 機場輕食）預估合計約 <strong>¥24,000 – ¥36,000 日圓</strong>（約台幣 5,160 – 7,740 元）；建議另預留 ¥5,000–¥8,000 買牛奶、優格、香蕉與咖啡點心。
+        </p>
+        <div class="price-row">
+          <span class="price-pill total">5日正餐總計：¥24,000 – ¥36,000</span>
+          <span class="price-pill free">零食飲品雜支：¥5,000 – ¥8,000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- D1 Dining -->
+    <div id="dine-d1" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge">D1</span> 11/27（五）餐飲規劃</h2>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D1 午餐｜下機首選最省力</span>
+            <span class="tag-chip green">飯店 1F 直接推車入座</span>
+          </div>
+          <h3 class="event-title">Hotel Plaza Osaka 1F「水晶自助餐廳 Crystal」</h3>
+          <p class="event-desc">就在入住飯店 1 樓，現做蛋料理、麵包、軟飯、燉煮蔬菜與水果齊全，吃飽剛好回房午休。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥2,200–¥2,800/人</span>
+            <span class="price-pill free">魚寶(3歲以下)：免費</span>
+            <span class="price-pill total">預估總計：¥4,400–¥5,600</span>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D1 晚餐｜逛街同棟解決</span>
+            <span class="tag-chip">北館 6F / 南館 7–8F</span>
+          </div>
+          <h3 class="event-title">Grand Front Osaka 館內親子餐廳（定食/烏龍麵）</h3>
+          <p class="event-desc">逛完無印旗艦店與木育廣場後直接同棟用餐，提供兒童餐椅與塑膠餐具，可分食白飯、烏龍麵與漢堡排。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥1,500–¥2,500/人</span>
+            <span class="price-pill free">魚寶共食/單點：¥0–¥400</span>
+            <span class="price-pill total">預估總計：¥3,200–¥5,400</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D2 Dining -->
+    <div id="dine-d2" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge">D2</span> 11/28（六）餐飲規劃</h2>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D2 午餐｜【跟團包含】</span>
+            <span class="tag-chip green">已含於員旅團費</span>
+          </div>
+          <h3 class="event-title">天橋立／伊根區域「若峽灣海鮮定食」</h3>
+          <p class="event-desc">可挑白飯、茶碗蒸與清蒸/烤熟魚肉分給魚寶搭配食用。</p>
+        </div>
+
+        <div class="event-box highlight">
+          <div class="event-top">
+            <span class="time-chip">D2 晚餐｜十三站西口步行 2 分鐘</span>
+            <span class="tag-chip green">營業至深夜・不限時吹暖氣</span>
+          </div>
+          <h3 class="event-title">Gusto（ガスト）十三站西口店</h3>
+          <p class="event-desc">日本國民家庭餐廳，從天橋立搭巴士回大阪後直接進店吹暖氣吃熱食。兒童餐有低鹽烏龍麵、漢堡排與玉米濃湯，還附贈小玩具。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥1,000–¥1,500/人</span>
+            <span class="price-pill">魚寶兒童餐：¥500–¥700</span>
+            <span class="price-pill total">預估總計：¥2,500–¥3,700</span>
+          </div>
+          <div class="btn-row single">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gusto+Juso+Osaka" target="_blank" rel="noopener">📍 開啟 Gusto 十三店導航</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D3 Dining -->
+    <div id="dine-d3" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge">D3</span> 11/29（日）餐飲規劃</h2>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D3 午餐（晴天主案）</span>
+            <span class="tag-chip amber">看真實新幹線經過！</span>
+          </div>
+          <h3 class="event-title">京都鐵道博物館 2F 餐廳（或水族館輕食區）</h3>
+          <p class="event-desc">推薦點一份「新幹線造型兒童餐盒」給魚寶，大人吃咖哩飯或定食；公園內「市電咖啡廳」亦可買麵包熱湯。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥1,100–¥1,500/人</span>
+            <span class="price-pill">新幹線兒童餐：¥1,100–¥1,300</span>
+            <span class="price-pill total">預估總計：¥3,300–¥4,300</span>
+          </div>
+        </div>
+
+        <div class="event-box" style="background:var(--blue-light); border-color:#B8D0E6;">
+          <div class="event-top">
+            <span class="time-chip" style="background:#D5E5F3; color:#1E4568;">D3 午餐（雨天備案 A 案）</span>
+            <span class="tag-chip">Kids Plaza 憑手章出入</span>
+          </div>
+          <h3 class="event-title">天神橋筋商店街（烏龍麵／親子丼／定食）</h3>
+          <p class="event-desc">全日有遮雨棚，選擇極多且平價，點軟爛烏龍麵或滑蛋親子丼最適合魚寶。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥800–¥1,300/人</span>
+            <span class="price-pill free">魚寶加點小碗：¥200–¥400</span>
+            <span class="price-pill total">預估總計：¥1,800–¥3,000</span>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D3 晚餐</span>
+            <span class="tag-chip">看完點燈順路吃</span>
+          </div>
+          <h3 class="event-title">京都河原町百貨美食街（或搭阪急直達回十三站）</h3>
+          <p class="event-desc">看完朱雀之庭點燈後，可於河原町高島屋/大丸樓上餐廳用餐，或搭阪急特急 40 分鐘直達回十三站吃拉麵/家庭餐廳。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥1,200–¥2,200/人</span>
+            <span class="price-pill">魚寶：¥300–¥600</span>
+            <span class="price-pill total">預估總計：¥2,700–¥5,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D4 & D5 Dining -->
+    <div id="dine-d4" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge">D4–D5</span> EXPOCITY 美食 ＆ 返台餐食</h2>
+        </div>
+
+        <div class="event-box highlight">
+          <div class="event-top">
+            <span class="time-chip">D4 午餐｜LaLaport EXPOCITY 1F</span>
+            <span class="tag-chip green">建議 11:45 先抽號碼牌</span>
+          </div>
+          <h3 class="event-title">大起水產迴轉壽司（EXPOCITY 1F）</h3>
+          <p class="event-desc">關西知名大型迴轉壽司，寬敞卡座好坐。魚寶可吃<strong>玉子燒、稻荷豆皮壽司、熟蝦、玉米軍艦、茶碗蒸與烏龍麵</strong>，大人大口吃新鮮握壽司。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥1,800–¥2,800/人</span>
+            <span class="price-pill">魚寶熟食點心：¥600–¥900</span>
+            <span class="price-pill total">預估總計：¥4,200–¥6,500</span>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D4 晚餐｜就在阿卡將隔壁！</span>
+            <span class="tag-chip green">備幼兒脫鞋軟墊區＋微波爐</span>
+          </div>
+          <h3 class="event-title">LaLaport EXPOCITY 3F 美食街「FOOD PAVILION」</h3>
+          <p class="event-desc">採買完直接在同層樓美食街用餐，設有親子低矮沙發區、脫鞋軟墊區與 70°C 調乳熱水機，吃完輕鬆搭單軌回飯店。</p>
+          <div class="price-row">
+            <span class="price-pill">大人：¥1,000–¥1,600/人</span>
+            <span class="price-pill">魚寶兒童餐：¥500–¥700</span>
+            <span class="price-pill total">預估總計：¥2,500–¥3,900</span>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip">D5 12/01（二）早午餐</span>
+            <span class="tag-chip">飯店早餐＋機場輕食</span>
+          </div>
+          <h3 class="event-title">飯店早餐 ➔ 關西空港出境後咖啡輕食</h3>
+          <p class="event-desc">過完出境安檢後於候機室旁買麵包、牛奶與咖啡墊胃，10:55 起飛後享用長榮機上餐。</p>
+          <div class="price-row">
+            <span class="price-pill total">機場輕食預估：¥1,400–¥2,300</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Japanese Dining Tips & One-Click Copy -->
+    <div id="dine-tips" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge sage">親子外食技巧</span> 日文溝通一鍵複製卡</h2>
+        </div>
+        <p class="event-desc" style="margin-bottom:8px;">
+          <strong>⚠️ 食物剪刀提醒：</strong>日本餐廳極少主動提供食物剪刀，請隨身帶一把兒童食物剪（<strong>搭機去回程務必放託運行李箱！</strong>），剪短烏龍麵、漢堡排與溫野菜超省事。
+        </p>
+
+        <div class="phrase-card">
+          <div>
+            <div class="phrase-jp">チャイルドチェアをお願いします</div>
+            <div class="phrase-zh">請給我一張兒童餐椅（進店比推車說這句即可）</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="copyText('チャイルドチェアをお願いします', '已複製「兒童餐椅」日文！')">📋 複製</button>
+        </div>
+
+        <div class="phrase-card">
+          <div>
+            <div class="phrase-jp">お子様メニューはありますか？</div>
+            <div class="phrase-zh">請問有兒童餐（お子様メニュー）嗎？</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="copyText('お子様メニューはありますか？', '已複製「兒童餐」日文！')">📋 複製</button>
+        </div>
+
+        <div class="phrase-card">
+          <div>
+            <div class="phrase-jp">取り分け用の小皿とスプーンをお願いします</div>
+            <div class="phrase-zh">請給我分食用的兒童小碗與湯匙</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="copyText('取り分け用の小皿とスプーンをお願いします', '已複製「分食碗匙」日文！')">📋 複製</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== TAB 3: 天氣穿搭 ==================== -->
+  <section id="tab-weather" class="tab-panel">
+
+    <div id="wea-overview" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge blue">氣候特徵</span> 11/27–12/01 關西初冬三重點</h2>
+        </div>
+        <div class="event-desc">
+          <ul>
+            <li><strong>日夜溫差大（6°C – 15°C）：</strong>白天有陽光時約 13–15°C 很舒適，但日落後與清晨會驟降至 6–8°C。</li>
+            <li><strong>海邊與公園風大體感冷：</strong>D2 天橋立／伊根舟屋靠日本海，風吹體感約 5°C，防風外層絕對必要。</li>
+            <li><strong>室內暖氣極強（22°C – 24°C）：</strong>電車、遊覽車、EXPOCITY 與 NIFREL 暖氣很強，<strong>千萬不要穿一件超厚刷毛衣</strong>，務必採「好穿脫洋蔥式穿法」。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="wea-baby" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge">魚寶穿法</span> 1歲8個月 3層洋蔥公式</h2>
+        </div>
+        <div class="event-box">
+          <h3 class="event-title">① 內層（吸汗透氣）</h3>
+          <p class="event-desc">純棉長袖包屁衣或薄款發熱衣（勿穿厚刷毛內衣，避免背巾或商場內悶出汗疹）。</p>
+        </div>
+        <div class="event-box">
+          <h3 class="event-title">② 中層（室內主力穿搭）</h3>
+          <p class="event-desc">一般厚度純棉大學 T 或針織上衣 ＋ 彈性長褲（在 EXPOCITY、NIFREL 單穿這層最剛好）。</p>
+        </div>
+        <div class="event-box highlight">
+          <h3 class="event-title">③ 外層（雙重防風組合）＋ 推車/背巾對策</h3>
+          <p class="event-desc"><strong>「輕量羽絨背心」＋「防風保暖連帽外套」</strong>：進室內脫外套留背心護肚子。坐推車蓋毛毯（用推車夾固定）並備好<strong>透明防風雨罩</strong>擋海風；D4 太陽之塔用背巾入塔前先幫魚寶脫外套以免過熱。隨身備<strong>凡士林／高保濕乳霜</strong>防臉頰乾裂。</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="wea-adult" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge sage">大人穿法</span> 夫婦洋蔥式穿搭建議</h2>
+        </div>
+        <div class="event-desc">
+          <ul>
+            <li><strong>Chester：</strong>透氣長袖 T 恤或襯衫 ＋ 防風機能夾克或輕羽絨外套（D4 逛 Workman Colors 可現場挑新外套現穿），一般休閒長褲即可，不需穿刷毛褲。</li>
+            <li><strong>Nancy：</strong>發熱衣 ＋ 針織衫／大學 T ＋ 防風長版外套。建議帶一條<strong>大尺寸圍巾或披肩</strong>，戶外圍脖子防風、進室內可當魚寶小蓋毯。</li>
+            <li><strong>鞋履關鍵：</strong>每日步數約 12,000–15,000 步，務必穿好走止滑的運動鞋（梅小路公園與萬博公園有草地碎石路）。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="wea-daily" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge amber">每日對照</span> D1–D5 氣溫與穿衣調整</h2>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top"><span class="time-chip">D1 11/27（五）桃園 ➔ 梅田</span><span class="tag-chip">大阪 9°C–14°C</span></div>
+          <p class="event-desc">04:30 桃園出發還不冷，把防風外套放登機箱最上層；09:55 抵關西空港下機前再拿出穿上。</p>
+        </div>
+        <div class="event-box highlight">
+          <div class="event-top"><span class="time-chip">D2 11/28（六）天橋立・伊根舟屋</span><span class="tag-chip red">全趟最冷！5°C–11°C</span></div>
+          <p class="event-desc">海邊風大體感僅 5°C，大人小孩務必穿最強防風外套＋戴帽子圍脖；上遊覽車吹暖氣記得幫魚寶脫外套。</p>
+        </div>
+        <div class="event-box">
+          <div class="event-top"><span class="time-chip">D3 11/29（日）京都梅小路點燈</span><span class="tag-chip amber">日夜溫差最大 6°C–14°C</span></div>
+          <p class="event-desc">傍晚 17:00 看朱雀之庭點燈氣溫驟降至 7°C，出博物館前務必幫魚寶加上羽絨背心、外套、帽子與推車毛毯。</p>
+        </div>
+        <div class="event-box">
+          <div class="event-top"><span class="time-chip">D4 11/30（一）萬博太陽之塔・EXPOCITY</span><span class="tag-chip">9°C–15°C</span></div>
+          <p class="event-desc">上午戶外排隊賞楓穿防風外套；11:30 進 NIFREL 與下午逛 EXPOCITY 全程暖氣，外套掛推車上即可。</p>
+        </div>
+        <div class="event-box">
+          <div class="event-top"><span class="time-chip">D5 12/01（二）大阪 ➔ 桃園</span><span class="tag-chip green">大阪 8°C ➔ 桃園 21°C</span></div>
+          <p class="event-desc">關西空港託運前把厚外套塞進大行李箱，只留一件薄外套隨身，13:10 回到溫暖台灣剛好輕便出關。</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== TAB 4: 採買 ==================== -->
+  <section id="tab-shopping" class="tab-panel">
+
+    <!-- Compact Toolbar + Collapsible Add Form -->
+    <div id="shop-tools" class="anchor-section">
+      <div class="toolbar-row">
+        <input class="search-box" id="shopSearch" placeholder="🔍 搜尋採買品項..." oninput="renderChecklists()">
+        <label class="toggle-label">
+          <input type="checkbox" id="shopHideChecked" onchange="renderChecklists()">
+          <span>只看未買</span>
+        </label>
+        <button class="btn btn-sm btn-primary" onclick="toggleAddPanel('shop')">➕ 新增</button>
+        <button class="btn btn-sm btn-sage" onclick="shareUnchecked('shop')">📤 傳給 Nancy</button>
+        <button class="btn btn-sm" onclick="resetChecks('shop')" title="清空勾選">🔄 重置</button>
+      </div>
+
+      <!-- Collapsible Quick Add Shopping Item Form -->
+      <div class="collapsible-panel" id="addPanel-shop">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <strong style="font-size:13.5px; color:var(--primary-dark);">➕ 臨時新增採買品項（自動儲存）</strong>
+          <button class="btn btn-sm" onclick="toggleAddPanel('shop')">✕ 收合</button>
+        </div>
+        <div class="add-row">
+          <input class="form-input" id="newShopName" placeholder="輸入想買的東西..." onkeydown="if(event.key==='Enter') addCustomItem('shop')">
+          <select class="form-select" id="newShopCat">
+            <option value="akachan">🍼 3F 阿卡將本鋪</option>
+            <option value="muji">🏠 無印良品 MUJI</option>
+            <option value="workman">🧥 3F Workman Colors</option>
+            <option value="drugstore">💊 藥妝店 ＆ 伴手禮</option>
+          </select>
+        </div>
+        <div class="add-row">
+          <input class="form-input" id="newShopNote" placeholder="備註尺碼/數量（選填）" onkeydown="if(event.key==='Enter') addCustomItem('shop')">
+          <button class="btn btn-primary" onclick="addCustomItem('shop')">＋ 加入清單</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="shop-akachan" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge">阿卡將本鋪</span> LaLaport EXPOCITY 3F</h2>
+            <p class="section-subtitle">魚寶精準尺碼基準：身高 85cm / 體重 10.8kg / 腳長 14cm</p>
+          </div>
+        </div>
+        <div id="list-shop-akachan"></div>
+      </div>
+    </div>
+
+    <div id="shop-muji" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge sage">無印良品 MUJI</span> Grand Front / EXPOCITY 1F</h2>
+            <p class="section-subtitle">單店單日未稅滿 ¥5,000（含稅 ¥5,500）記得出示護照</p>
+          </div>
+        </div>
+        <div id="list-shop-muji"></div>
+      </div>
+    </div>
+
+    <div id="shop-workman" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge blue">Workman Colors</span> LaLaport EXPOCITY 3F</h2>
+            <p class="section-subtitle">高 CP 值防潑水機能外套、羽絨衣與工作褲</p>
+          </div>
+        </div>
+        <div id="list-shop-workman"></div>
+      </div>
+    </div>
+
+    <div id="shop-drugstore" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge amber">藥妝 ＆ 伴手禮</span> 十三站藥妝 / 機場免稅店</h2>
+            <p class="section-subtitle">伴手禮建議 D5 過關西空港海關後再買直接提上機</p>
+          </div>
+        </div>
+        <div id="list-shop-drugstore"></div>
+      </div>
+    </div>
+
+    <!-- 2026 Tax-Free Rules & Threshold Accumulator -->
+    <div id="shop-tax" class="anchor-section">
+      <div class="card" style="background:var(--amber-light); border-color:#EBC89B;">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge amber">2026 免稅新制</span> 退稅檢核 ＆ 湊單計算機</h2>
+        </div>
+
+        <!-- Tax-Free Threshold Mini Calculator -->
+        <div class="tax-calc-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:12.5px;">
+            <strong>💴 單店免稅湊單累加器（含稅 ¥5,500 門檻）</strong>
+            <button class="btn btn-sm" style="padding:3px 8px; font-size:11px;" onclick="resetTaxCalc()">歸零</button>
+          </div>
+          <div class="tax-calc-row">
+            <input class="form-input" id="taxItemPrice" type="number" placeholder="輸入含稅日圓 (如 1980)" onkeydown="if(event.key==='Enter') addTaxPrice()">
+            <button class="btn btn-primary btn-sm" onclick="addTaxPrice()">＋ 累加</button>
+          </div>
+          <div class="tax-progress-bar"><div class="tax-progress-fill" id="taxProgressFill"></div></div>
+          <div id="taxCalcStatus" style="font-size:12.5px; font-weight:800; color:#8A500C;">
+            目前累計：¥0（距離含稅 ¥5,500 門檻還差 ¥5,500）
+          </div>
+        </div>
+
+        <div id="taxChecklistContainer" style="margin-top:8px;"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== TAB 5: 打包 ==================== -->
+  <section id="tab-packing" class="tab-panel">
+
+    <div id="pack-tools" class="anchor-section">
+      <!-- Compact Toolbar + Collapsible Add Form -->
+      <div class="toolbar-row">
+        <input class="search-box" id="packSearch" placeholder="🔍 搜尋打包物品..." oninput="renderChecklists()">
+        <label class="toggle-label">
+          <input type="checkbox" id="packHideChecked" onchange="renderChecklists()">
+          <span>只看未帶</span>
+        </label>
+        <button class="btn btn-sm btn-sage" onclick="toggleAddPanel('pack')">➕ 新增</button>
+        <button class="btn btn-sm btn-primary" onclick="shareUnchecked('pack')">📤 複製未帶</button>
+        <button class="btn btn-sm" onclick="openBackupModal()">💾 備份</button>
+        <button class="btn btn-sm" onclick="resetChecks('pack')" title="清空勾選">🔄 重置</button>
+      </div>
+
+      <!-- Collapsible Quick Add Packing Item Form -->
+      <div class="collapsible-panel" id="addPanel-pack">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <strong style="font-size:13.5px; color:var(--sage);">➕ 臨時新增打包物品（自動儲存）</strong>
+          <button class="btn btn-sm" onclick="toggleAddPanel('pack')">✕ 收合</button>
+        </div>
+        <div class="add-row">
+          <input class="form-input" id="newPackName" placeholder="輸入要帶的物品..." onkeydown="if(event.key==='Enter') addCustomItem('pack')">
+          <select class="form-select" id="newPackCat">
+            <option value="gear">🍼 推車・背巾・行李箱</option>
+            <option value="carryon">🎒 隨身媽媽包（上飛機）</option>
+            <option value="clothes">🧥 託運衣物穿搭</option>
+            <option value="meds">💊 幼兒常備藥 ＆ 消耗品</option>
+          </select>
+        </div>
+        <div class="add-row">
+          <input class="form-input" id="newPackNote" placeholder="備註數量/放隨身或託運（選填）" onkeydown="if(event.key==='Enter') addCustomItem('pack')">
+          <button class="btn btn-sage" onclick="addCustomItem('pack')">＋ 加入清單</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="pack-gear" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge">核心裝備</span> 推車・背巾（太陽之塔必備）・箱包</h2>
+        </div>
+        <div id="list-pack-gear"></div>
+      </div>
+    </div>
+
+    <div id="pack-carryon" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge blue">隨身媽媽包</span> 證件憑證・機上安撫・清潔</h2>
+        </div>
+        <div id="list-pack-carryon"></div>
+      </div>
+    </div>
+
+    <div id="pack-clothes" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge sage">託運衣物</span> 魚寶 3 層洋蔥穿搭 ＆ 夫婦衣物</h2>
+        </div>
+        <div id="list-pack-clothes"></div>
+      </div>
+    </div>
+
+    <div id="pack-meds" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title"><span class="day-badge amber">常備藥 ＆ 耗材</span> 幼兒醫藥包・尿布・食物剪（託運）</h2>
+        </div>
+        <div id="list-pack-meds"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== TAB 6: 員旅醫療 (Standalone Tab) ==================== -->
+  <section id="tab-info" class="tab-panel">
+
+    <!-- Group Official Info & Leaders Section -->
+    <div id="info-group" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge blue" data-enc="SENS_GROUP_CODE">鎖定中</span> 百商員旅集合與領隊直撥</h2>
+            <p class="section-subtitle">行李牌 / 胸牌顏色：藍．紅｜已含團體小費（每日 NT$300）</p>
+          </div>
+        </div>
+
+        <div class="event-box highlight">
+          <div class="event-top">
+            <span class="time-chip">🚐 私人 UGO 機場接送（來回）</span>
+            <span class="tag-chip amber">司機/車號前一日填入自動同步</span>
+          </div>
+          <ul class="scan-list">
+            <li><span class="scan-tag">去程</span><strong>11/27（五）03:50</strong>｜<span data-enc="SENS_HOME_ADDR">鎖定中</span> ➔ TPE桃園國際機場（04:30 二航 3F 長榮 20 號櫃台集合）。</li>
+            <li><span class="scan-tag ok">回程</span><strong>12/01（二）13:10</strong>｜桃園國際機場 ➔ <span data-enc="SENS_HOME_ADDR">鎖定中</span>。</li>
+            <li><span class="scan-tag">行李</span>免費託運 <strong>1 件限 23 公斤</strong>；二航機場專線：<a id="linkAirportLine" href="tel:" style="color:var(--primary-dark); font-weight:800;" data-enc="SENS_AIRPORT_LINE">鎖定中</a>。</li>
+          </ul>
+          <div style="display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;">
+            <button class="btn btn-sm btn-sage" onclick="shareUgoInfo()">📤 複製 UGO 司機資訊給 Nancy</button>
+          </div>
+        </div>
+
+        <!-- Tour Leaders Direct Dial Cards -->
+        <div class="emg-grid">
+          <div class="emg-call-card" style="border-color:#B8D0E6; background:#F7FAFD;">
+            <div class="emg-call-title" data-enc="SENS_GUIDE_A_NAME">🚩 A 團導遊</div>
+            <div class="emg-call-num" style="color:var(--blue); font-size:13.5px; white-space:pre-line;" data-enc="SENS_GUIDE_A_PHONES">鎖定中</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+              <a class="btn btn-primary btn-sm" style="background:var(--blue); border-color:var(--blue); padding:6px 4px;" id="linkGuideAJp" href="tel:">📞 日本手機</a>
+              <a class="btn btn-sm" style="padding:6px 4px;" id="linkGuideATw" href="tel:">📞 台灣手機</a>
+            </div>
+          </div>
+          <div class="emg-call-card" style="border-color:#B8D0E6; background:#F7FAFD;">
+            <div class="emg-call-title" data-enc="SENS_GUIDE_B_NAME">🚩 B 團導遊</div>
+            <div class="emg-call-num" style="color:var(--blue); font-size:13.5px; white-space:pre-line;" data-enc="SENS_GUIDE_B_PHONES">鎖定中</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+              <a class="btn btn-primary btn-sm" style="background:var(--blue); border-color:var(--blue); padding:6px 4px;" id="linkGuideBJp" href="tel:">📞 日本手機</a>
+              <a class="btn btn-sm" style="padding:6px 4px;" id="linkGuideBTw" href="tel:">📞 台灣手機</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="memo-grid">
+            <div class="memo-field">
+              <label>我們所屬組別（A 團或 B 團）＆ 遊覽車車號筆記（自動儲存）</label>
+              <input class="memo-input" id="memoLeader" placeholder="例如：A 團（蕭詩璇）｜車號 888" oninput="saveMemo()">
+            </div>
+            <div class="memo-field">
+              <label>D2 天橋立大廳集合時間筆記</label>
+              <input class="memo-input" id="memoD2Bus" placeholder="例如：08:15 飯店 1F 大廳集合" oninput="saveMemo()">
+            </div>
+            <div class="memo-field">
+              <label>D5 退房放行李 ＆ 送機專車集合時間</label>
+              <input class="memo-input" id="memoD5Bus" placeholder="例如：07:20 退房上車前往關西空港" oninput="saveMemo()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emergency Medical & Insurance Section with Direct Dial -->
+    <div id="info-medical" class="anchor-section">
+      <div class="card" style="border-color:#EBC2BE;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge danger">緊急醫療</span> 一鍵直撥急難救助與保單速查</h2>
+            <p class="section-subtitle">點擊電話卡片即可直接開啟手機撥號畫面</p>
+          </div>
+        </div>
+
+        <div class="event-box" style="background:var(--danger-light); border-color:#EBC2BE;">
+          <div class="emg-grid">
+            <div class="emg-call-card">
+              <div class="emg-call-title">🚑 日本救護車／火警</div>
+              <div class="emg-call-num">119</div>
+              <a class="btn btn-danger btn-sm" href="tel:119">📞 一鍵直撥 119</a>
+            </div>
+            <div class="emg-call-card">
+              <div class="emg-call-title">🚓 日本警察局報案</div>
+              <div class="emg-call-num">110</div>
+              <a class="btn btn-danger btn-sm" href="tel:110">📞 一鍵直撥 110</a>
+            </div>
+            <div class="emg-call-card">
+              <div class="emg-call-title">🇹🇼 駐大阪辦事處 24H 急難</div>
+              <div class="emg-call-num" style="font-size:14px;" data-enc="SENS_OSAKA_OFFICE">鎖定中</div>
+              <a id="linkOsakaOffice" class="btn btn-danger btn-sm" href="tel:">📞 直撥辦事處</a>
+            </div>
+            <div class="emg-call-card">
+              <div class="emg-call-title">🏥 大阪府夜間救急醫療</div>
+              <div class="emg-call-num" style="font-size:14px;">06-6693-1199</div>
+              <a class="btn btn-danger btn-sm" href="tel:+81666931199">📞 直撥醫療查詢</a>
+            </div>
+          </div>
+
+          <ul class="scan-list" style="margin-top:10px; font-size:12.5px;">
+            <li><span class="scan-tag">旅行社</span>大興旅行社緊急聯絡：上班 <a id="linkAgencyOffice" href="tel:" style="font-weight:800; color:var(--danger);" data-enc="SENS_AGENCY_OFFICE">鎖定中</a> ｜ 晚上 <a id="linkAgencyNight" href="tel:" style="font-weight:800; color:var(--danger);" data-enc="SENS_AGENCY_NIGHT">鎖定中</a></li>
+            <li><span class="scan-tag ok">保險</span>已投保旅行業責任險 <strong>NT$250 萬 ＋ 20 萬意外醫療險（實支實付）</strong>。</li>
+          </ul>
+          <div class="memo-grid" style="margin-top:10px;">
+            <div class="memo-field">
+              <label>自行加保之海外突發疾病醫療險保單號 ＆ 24H 救援專線（自動儲存）</label>
+              <input class="memo-input" id="memoInsurance" placeholder="輸入個人加保之保單號碼與救援專線..." oninput="saveMemo()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transit & Connectivity Section -->
+    <div id="info-transit" class="anchor-section">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><span class="day-badge sage">乘車與網路</span> 幼兒免票規則・電梯・雙人網路</h2>
+          </div>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip" style="background:var(--sage-light); color:var(--sage);">🚃 1歲8個月幼兒乘車全免規則</span>
+          </div>
+          <ul class="scan-list">
+            <li><span class="scan-tag ok">免票</span>依日本鐵道規定，1 歲至未滿 6 歲幼兒由大人陪同，每位大人可免費帶最多 2 名幼兒（不佔指定席），這 5 天搭阪急電鐵、大阪地鐵、JR、大阪單軌電車魚寶都<strong>免買票</strong>。</li>
+            <li><span class="scan-tag">支付</span>免買周遊券，大人直接用手機 Apple Pay / Google Pay 綁定 <strong>ICOCA 或 Suica</strong> 感應進出站即可。</li>
+            <li><span class="scan-tag warn">電梯</span><strong>阪急十三站</strong>「1號月台（往梅田）」與「3/4號月台（往京都/北千里）」各有獨立剪票口與電梯，進站前先看指標。</li>
+          </ul>
+        </div>
+
+        <div class="event-box">
+          <div class="event-top">
+            <span class="time-chip" style="background:var(--blue-light); color:var(--blue);">📶 雙人獨立網路 ＆ 離線地圖</span>
+          </div>
+          <ul class="scan-list">
+            <li><span class="scan-tag warn">網路</span>夫妻各自開通獨立 eSIM / 漫遊，<strong>勿開熱點分享</strong>，避免在梅田或阿卡將分頭採買時斷網失聯。</li>
+            <li><span class="scan-tag ok">離線</span>出發前先在 Google Maps App 下載「大阪・京都」區域離線地圖，地下街訊號弱時也能秒開導航。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Fullscreen Japanese Driver / Staff Modal -->
+<div class="modal-backdrop" id="driverModal" onclick="if(event.target===this) closeDriverModal()">
+  <div class="modal-card">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <span class="day-badge">🚕 日本司機／站務員溝通卡</span>
+      <button class="btn btn-sm" onclick="closeDriverModal()">✕ 關閉</button>
+    </div>
+    <div class="driver-jp-title" id="driverTitle"></div>
+    <div class="driver-jp-addr" id="driverAddr"></div>
+    <div class="driver-note" id="driverNote"></div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="copyDriverAddr()">📋 複製日文地址</button>
+      <button class="btn" onclick="closeDriverModal()">完成</button>
+    </div>
+  </div>
+</div>
+
+<!-- JSON Backup / Restore Modal -->
+<div class="modal-backdrop" id="backupModal" onclick="if(event.target===this) closeBackupModal()">
+  <div class="modal-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+      <strong style="font-size:16px;">💾 清單進度備份與跨瀏覽器還原</strong>
+      <button class="btn btn-sm" onclick="closeBackupModal()">✕</button>
+    </div>
+    <p class="event-desc" style="margin-bottom:8px;">
+      若在 Android 手機上從 LINE 內建瀏覽器切換到 Chrome 開啟本網頁，可複製下方備份碼貼上還原，所有勾選與新增品項都會完整保留：
+    </p>
+    <textarea id="backupCodeArea" class="memo-input" rows="4" style="font-family:monospace; font-size:11.5px;"></textarea>
+    <div class="btn-row" style="margin-top:10px;">
+      <button class="btn btn-primary" onclick="copyBackupCode()">📋 複製備份碼</button>
+      <button class="btn btn-sage" onclick="importBackupCode()">📥 貼上並還原</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">已複製！</div>
+
+<script>
+    // ==================== PASSCODE PROTECTION & DECRYPTION ====================
+  const ENCRYPTED_VAULT = {
+    "SENS_HOTEL_ADDR_SHORT": "07KgAwMAHwYAAAcW1ZaV36iY14ys15aR2aqY04iw1IGw14Wr1b6I0KaC17qn27W4EAMfDx0DBw==",
+    "SENS_HOTEL_ADDR_COPY": "07KgAwMAHwYAAAcW1ZaV36iY14ys15aR2aqY04iw1IGw14Wr1b6I0KaC17qn27W4AR8LGwEHEn5fRldaEGJeV0pTEnlDU1lX",
+    "SENS_HOTEL_NOTE": "ZHd+DBACBBsGAQIFHQMCBgDdjr7ZqpjQsJfXu7HWir/ZlbcW2JeN07+R14ii1J+fBde6sN+Ouw==",
+    "SENS_HOME_ADDR": "AQIG07+C17qn14q01Iqf04GD17uw176h1Zy737e+17qn15y/2IWdDgEF2q+v",
+    "SENS_TOWER_NO": "AgIAAAEDAw8CAwAAAAYCBwICAAAdAwMbAwI=",
+    "SENS_TOWER_URL": "WEZGRkMIHRlCV0FTQkRXGERTW09fR1xZRF1HG1VKQlkHAhxcQB1DRFNdVlNTQFdXRFccRlhCDUdCUV1SVQ8ABgIEAwcBCwAHAgQCAgADAAYCBB8HAR8BBh0CAgYABQYCBwcG",
+    "SENS_GROUP_CODE": "1ZaV3ri6EgQGAwMEB3h9eQUfc9Wws3A=",
+    "SENS_GUIDE_A_NAME": "wK2onxBzEtOsqteGvtuzvN+Prt6ln9qfmdWgsRDXgrnVlaI=",
+    "SENS_GUIDE_A_PHONES": "1qWX0Kye3YqqAgoGHQUHAAUfBAICAjjTv4LVt5PdjqwACwAEHQQABx0LBA4=",
+    "SENS_GUIDE_A_JP": "AAoCAQUEBwAEAAI=",
+    "SENS_GUIDE_A_TW": "AAsABAYAAw8GCg==",
+    "SENS_GUIDE_B_NAME": "wK2onxBwEtOsqteGvtuzvN+PrtO6u9SuvtWinBDXt77Xpq0=",
+    "SENS_GUIDE_B_PHONES": "1qWX0Kye3YqqAgoGHQEABgIfCwUDAjjTv4LVt5PdjqwACwEEHQIEAR0FAg4=",
+    "SENS_GUIDE_B_JP": "AAoCBQICAA8DAQI=",
+    "SENS_GUIDE_B_TW": "AAsBBAAEBQEACg==",
+    "SENS_AGENCY_OFFICE": "GAIAHwIHBAEdAwIBBg==",
+    "SENS_AGENCY_NIGHT": "AAsBBR0LAgAdBwEO",
+    "SENS_AIRPORT_LINE": "AAsKDh0DBwQdAgEC",
+    "SENS_OSAKA_OFFICE": "AAsCGwgFCwIdBgcACA=="
+  };
+  const AUTH_STORAGE_KEY = 'osaka_trip_2026_passcode';
+  let unlockedKey = '';
+
+  function decryptVaultItem(vaultKey) {
+    const b64 = ENCRYPTED_VAULT[vaultKey];
+    if (!b64 || !unlockedKey) return '';
+    try {
+      const bin = atob(b64);
+      const bytes = new Uint8Array(bin.length);
+      const kBytes = new TextEncoder().encode(unlockedKey);
+      for (let i = 0; i < bin.length; i++) {
+        bytes[i] = bin.charCodeAt(i) ^ kBytes[i % kBytes.length];
+      }
+      return new TextDecoder().decode(bytes);
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function applyDecryptedData() {
+    document.querySelectorAll('[data-enc]').forEach(el => {
+      const key = el.getAttribute('data-enc');
+      const val = decryptVaultItem(key);
+      if (val) el.textContent = val;
+    });
+    const towerLink = document.getElementById('towerQrLink');
+    if (towerLink) towerLink.href = decryptVaultItem('SENS_TOWER_URL');
+
+    const mapHref = [
+      ['linkAirportLine', 'SENS_AIRPORT_LINE', ''],
+      ['linkGuideAJp', 'SENS_GUIDE_A_JP', ''],
+      ['linkGuideATw', 'SENS_GUIDE_A_TW', ''],
+      ['linkGuideBJp', 'SENS_GUIDE_B_JP', ''],
+      ['linkGuideBTw', 'SENS_GUIDE_B_TW', ''],
+      ['linkOsakaOffice', 'SENS_OSAKA_OFFICE', '+81'],
+      ['linkAgencyOffice', 'SENS_AGENCY_OFFICE', ''],
+      ['linkAgencyNight', 'SENS_AGENCY_NIGHT', '']
+    ];
+    mapHref.forEach(([id, k, prefix]) => {
+      const el = document.getElementById(id);
+      const raw = decryptVaultItem(k).replace(/[^0-9]/g, '');
+      if (el && raw) {
+        const dial = prefix ? (prefix + raw.replace(/^0/, '')) : raw;
+        el.href = 'tel:' + dial;
+      }
+    });
+  }
+
+  function showDriverEncrypted(title, addrKey, noteKey) {
+    showDriver(title, decryptVaultItem(addrKey), decryptVaultItem(noteKey));
+  }
+
+  function copyEncrypted(key, msg) {
+    copyText(decryptVaultItem(key), msg);
+  }
+
+  function unlockApp() {
+    const input = document.getElementById('passcodeInput');
+    const err = document.getElementById('lockErr');
+    const candidate = (input.value || '').trim();
+    if (!candidate) {
+      err.textContent = '請輸入密碼';
+      return;
+    }
+    unlockedKey = candidate;
+    const testVal = decryptVaultItem('SENS_TOWER_NO');
+    if (testVal.startsWith('20261119')) {
+      localStorage.setItem(AUTH_STORAGE_KEY, candidate);
+      document.getElementById('lockScreen').classList.add('unlocked');
+      err.textContent = '';
+      applyDecryptedData();
+      showToast('🔓 已解鎖！本機後續開啟免重複輸入');
+    } else {
+      unlockedKey = '';
+      err.textContent = '密碼錯誤，請再試一次（提示：魚寶生日 4 碼）';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  function lockApp() {
+    localStorage.removeItem(AUTH_STORAGE_KEY);
+    unlockedKey = '';
+    document.getElementById('passcodeInput').value = '';
+    document.getElementById('lockScreen').classList.remove('unlocked');
+  }
+
+  // ==================== DATA MODEL ====================
+  const DEFAULT_ITEMS = {
+    tax: [
+      { id: 'tax-1', name: '單店單日未稅滿 ¥5,000（含稅 ¥5,500）出示護照正本', note: '阿卡將、無印良品、WORKMAN 結帳務必帶全家人護照' },
+      { id: 'tax-2', name: '妥善保存免稅收據 QR Code ＆ 封袋商品不拆封', note: '2026 免稅新制規範，離境前切勿拆封消耗品包裝' },
+      { id: 'tax-3', name: 'D5 關西空港【先過海關 KIOSK 終端機核驗】再託運！', note: '切記！行李一旦先託運就無法完成海關實物核驗退稅' }
+    ],
+    shop: [
+      // Akachan Honpo
+      { id: 's-ak-1', cat: 'akachan', name: '日系機能童鞋（14.5cm & 15.0cm 各 1 雙）', note: '首選 IFME（寬楦）或 ASICS 亞瑟士 SUKU2，現場先站量腳板' },
+      { id: 's-ak-2', cat: 'akachan', name: '短筒軟質輕量雨鞋（14.5cm 或 15.0cm）', note: '筒高 10-12cm（Skater / Stample 日本製），15cm 可加鞋墊' },
+      { id: 's-ak-3', cat: 'akachan', name: '80–95cm 斗篷式雨衣 ＋ 40cm 幼兒安全雨傘', note: '雨衣選透明帽緣視野窗＋反光條；雨傘選全圓頭防夾手' },
+      { id: 's-ak-4', cat: 'akachan', name: '胸扣式幼兒防走失背包（4L–5L，自重 250g 內）', note: '務必有胸前固定扣，背帶才不會滑落' },
+      { id: 's-ak-5', cat: 'akachan', name: 'EDISON 幼兒叉匙組 ＋ 水壺原廠替換吸管＆墊圈', note: 'Richell / Combi 替換吸管與墊圈一次買 2–3 組備用' },
+      { id: 's-ak-6', cat: 'akachan', name: '外出一次性拋棄式防水圍兜', note: '多買幾盒，日本外食或旅遊超方便' },
+      { id: 's-ak-7', cat: 'akachan', name: '和光堂／貝親「1歳4ヶ月〜」常溫調理包 ＆ 寶寶醬油/香鬆', note: '注意：常溫調理包與液體醬油返台務必放託運行李箱' },
+      { id: 's-ak-8', cat: 'akachan', name: '日本製 6 層紗開扣式防踢被 ＆ 95cm 6 層紗學習褲', note: '冬夜踢被必備，純棉透氣耐洗' },
+      { id: 's-ak-9', cat: 'akachan', name: '貝親第 3 階段學習牙刷 ＋ 木糖醇防蛀潔牙糖', note: '水 99% Super 濕紙巾與重複水洗濕紙巾蓋也可順手補' },
+      // MUJI
+      { id: 's-mj-1', cat: 'muji', name: '幼兒無側縫線家居睡衣組（90cm / 100cm 各 1 套）', note: '100% 有機棉筒狀編織，附防滑脫側扣' },
+      { id: 's-mj-2', cat: 'muji', name: '幼兒「容易穿脫」純棉上衣（長袖 90cm / 短袖 100cm）', note: '買 3–4 件，高彈性羅紋領口、無刺癢衣標' },
+      { id: 's-mj-3', cat: 'muji', name: '幼兒足跟直角防滑襪（13–15cm，2 組 3 雙入）', note: '腳底大面積防滑膠點＋襪口內側姓名欄' },
+      { id: 's-mj-4', cat: 'muji', name: '濕毛巾可擦拭蠟筆（12 色，1 盒）', note: '返台放託運行李箱，畫到桌面用濕紙巾一擦即淨' },
+      { id: 's-mj-5', cat: 'muji', name: '夫婦秋冬法蘭絨襯衫、家居服 ＆ 旅行收納壓縮袋', note: 'D1 梅田北館 2F-4F 或 D4 EXPOCITY 1F 湊滿額免稅' },
+      // Workman
+      { id: 's-wm-1', cat: 'workman', name: '夫婦防潑水機能連帽外套 ／ X-Shelter 輕量羽絨夾克', note: 'EXPOCITY 3F Workman Colors，防風保暖高 CP 值' },
+      { id: 's-wm-2', cat: 'workman', name: '多口袋彈力戶外工作褲 ／ 防滑防水休閒鞋', note: '適合帶小孩戶外公園與露營穿著' },
+      // Drugstore
+      { id: 's-dr-1', cat: 'drugstore', name: '幼兒高保濕乳霜（Mama & Kids / 貝親桃葉乳液）', note: '十三站周邊松本清或大國藥妝即可購入' },
+      { id: 's-dr-2', cat: 'drugstore', name: '大人常備胃藥、眼藥水、痠痛貼布', note: '每日走 15,000 步貼布超實用' },
+      { id: 's-dr-3', cat: 'drugstore', name: '公司同事伴手禮（白色戀人 / 薯條三兄弟 / 抹茶點心）', note: '留到 D5 過完關西空港出境海關再買直接提上機！' }
+    ],
+    pack: [
+      // Gear
+      { id: 'p-gr-1', cat: 'gear', name: '輕便型折疊嬰兒車 ＋ 透明防風雨罩 ＋ 毛毯夾', note: 'D2 海邊與 D3 傍晚點燈擋風必備' },
+      { id: 'p-gr-2', cat: 'gear', name: '輕便型背巾（D4 太陽之塔內部參觀必帶！）', note: '太陽之塔嚴禁推車入塔，務必使用背巾或手抱' },
+      { id: 'p-gr-3', cat: 'gear', name: '28–29 吋大型託運行李箱（裝 5 分滿出發）＋ 20 吋登機箱', note: '預留空間裝阿卡將與無印戰利品，另帶 2 個折疊尼龍袋' },
+      { id: 'p-gr-4', cat: 'gear', name: 'Google Maps 關西離線地圖 ＋ 雙人獨立 eSIM / 漫遊', note: '夫妻勿用熱點分享，避免逛街分開斷網' },
+      // Carry-on
+      { id: 'p-co-1', cat: 'carryon', name: '全家護照正本 ＋ VJW QR Code ＋ 太陽之塔預約截圖', note: '每天逛街辦免稅都要帶護照正本！' },
+      { id: 'p-co-2', cat: 'carryon', name: '海外旅遊不便險 ＆ 突發疾病醫療險保單電子檔', note: '建議把保單號與 24H 救援電話填入「員旅醫療」分頁' },
+      { id: 'p-co-3', cat: 'carryon', name: '魚寶空吸管水壺 ＋ 防掉零食杯 ＋ 起降安撫米餅/小饅頭', note: '水壺過完安檢再裝溫水；飛機起降吞嚥防耳鳴' },
+      { id: 'p-co-4', cat: 'carryon', name: '貼紙書 / 安撫小玩具（應付飛機與 D2 長途巴士）', note: '體積小、安靜不吵鬧為主' },
+      { id: 'p-co-5', cat: 'carryon', name: '隨身尿布 4–5 片 ＋ 濕紙巾 ＋ 拋棄式尿布墊 ＋ 塑膠袋', note: '太陽之塔內無廁所，入塔前先在公園廁所換好' },
+      { id: 'p-co-6', cat: 'carryon', name: '魚寶備用換洗衣物 1 套 ＋ 拋棄式圍兜', note: '應付機上或外出溢奶/打翻食物' },
+      // Clothes
+      { id: 'p-cl-1', cat: 'clothes', name: '魚寶純棉長袖內著/薄發熱衣 5–6 件 ＋ 薄長袖/長褲各 5 件', note: '先帶前 3 天份，後面可直接穿日本新買的 90cm 新衣' },
+      { id: 'p-cl-2', cat: 'clothes', name: '魚寶「輕量羽絨背心」＋「防風保暖連帽外套」', note: '黃金洋蔥組合：進暖氣房脫外套留背心護肚子' },
+      { id: 'p-cl-3', cat: 'clothes', name: '魚寶睡衣 2 套 ＋ 襪子 5 雙 ＋ 遮耳針織帽 ＋ 套頭圍脖', note: '圍脖比長圍巾安全不易勾到' },
+      { id: 'p-cl-4', cat: 'clothes', name: '夫婦發熱衣、薄長袖/針織衫、防風外套 ＆ 好走止滑運動鞋', note: 'Nancy 可帶大圍巾/披肩兼作魚寶推車蓋毯' },
+      // Meds & Consumables
+      { id: 'p-md-1', cat: 'meds', name: '兒童食物剪刀（去回程務必放託運行李箱！）', note: '日本餐廳較少提供剪刀，剪烏龍麵與肉排必備' },
+      { id: 'p-md-2', cat: 'meds', name: '幼兒常備藥物（退燒藥水、抗組織胺、止瀉益生菌、耳溫槍）', note: '請小兒科開立備用藥並保留原藥袋' },
+      { id: 'p-md-3', cat: 'meds', name: '寶寶高保濕乳霜 / 凡士林 ＋ 蚊蟲止癢膏', note: '日本 11 月底非常乾燥，每次擦完嘴順手補擦臉頰' },
+      { id: 'p-md-4', cat: 'meds', name: '尿布（先帶前 2–3 天份量，不夠當地藥妝店買）', note: '省下行李箱空間裝戰利品' },
+      { id: 'p-md-5', cat: 'meds', name: '旅行裝奶瓶清潔液、小刷子 ＆ 折疊晾衣架', note: '晚上在飯店清洗魚寶吸管水壺與口水巾' }
+    ]
+  };
+
+  const SUB_NAV_CONFIG = {
+    itinerary: [
+      { id: 'itin-d1', label: 'D1 抵達/梅田', date: '2026-11-27' },
+      { id: 'itin-d2', label: 'D2 天橋立/伊根', date: '2026-11-28' },
+      { id: 'itin-d3', label: 'D3 梅小路/雨備', date: '2026-11-29' },
+      { id: 'itin-d4', label: 'D4 太陽之塔/採買', date: '2026-11-30' },
+      { id: 'itin-d5', label: 'D5 退稅返台', date: '2026-12-01' }
+    ],
+    dining: [
+      { id: 'dine-budget', label: '💱 匯率/總預算' },
+      { id: 'dine-d1', label: 'D1 水晶/梅田' },
+      { id: 'dine-d2', label: 'D2 Gusto' },
+      { id: 'dine-d3', label: 'D3 鐵道館/商店街' },
+      { id: 'dine-d4', label: 'D4 大起水產/美食街' },
+      { id: 'dine-tips', label: '🗣️ 日文溝通卡' }
+    ],
+    weather: [
+      { id: 'wea-overview', label: '🌡️ 氣候三重點' },
+      { id: 'wea-baby', label: '👶 魚寶3層穿法' },
+      { id: 'wea-adult', label: '👫 夫婦穿搭' },
+      { id: 'wea-daily', label: '📅 D1–D5 對照' }
+    ],
+    shopping: [
+      { id: 'shop-akachan', label: '🍼 阿卡將本鋪' },
+      { id: 'shop-muji', label: '🏠 無印良品' },
+      { id: 'shop-workman', label: '🧥 WORKMAN' },
+      { id: 'shop-drugstore', label: '💊 藥妝/伴手禮' },
+      { id: 'shop-tax', label: '💴 免稅計算機' }
+    ],
+    packing: [
+      { id: 'pack-gear', label: '🍼 推車背巾' },
+      { id: 'pack-carryon', label: '🎒 隨身媽媽包' },
+      { id: 'pack-clothes', label: '🧥 託運衣物' },
+      { id: 'pack-meds', label: '💊 常備藥耗材' }
+    ],
+    info: [
+      { id: 'info-group', label: '📋 員旅集合聯絡' },
+      { id: 'info-medical', label: '📞 一鍵直撥醫療' },
+      { id: 'info-transit', label: '🚃 乘車規則/網路' }
+    ]
+  };
+
+  // ==================== STATE MANAGEMENT ====================
+  const STORAGE_KEY = 'osaka_trip_2026_state_v6';
+  let state = {
+    checked: {},
+    customShop: [],
+    customPack: [],
+    d3Mode: 'sunny',
+    memos: { leader: '', d2Bus: '', d5Bus: '', insurance: '' },
+    ugo: {
+      outDriver: '', outPlate: '', outPhone: '',
+      inDriver: '', inPlate: '', inPhone: ''
+    },
+    flights: { outCode: 'BR178', inCode: 'BR177' },
+    fxRate: '0.215',
+    taxTotal: 0
+  };
+
+  let activeTab = 'itinerary';
+  let currentDriverData = { title: '', addr: '' };
+
+  function loadState() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('osaka_trip_2026_state_v5');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        state = {
+          ...state,
+          ...parsed,
+          memos: { ...state.memos, ...(parsed.memos || {}) },
+          flights: { ...state.flights, ...(parsed.flights || {}) },
+          ugo: { ...state.ugo, ...(parsed.ugo || {}) }
+        };
+      }
+    } catch (e) { console.warn('Storage load error', e); }
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) { console.warn('Storage save error', e); }
+  }
+
+  function getTodayISO() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const d = String(now.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
+  // ==================== STICKY HEIGHT & SCROLLSPY ====================
+  function updateStickyOffset() {
+    const wrapper = document.getElementById('stickyWrapper');
+    if (wrapper) {
+      const h = wrapper.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--sticky-offset', (h + 10) + 'px');
+    }
+  }
+
+  window.addEventListener('resize', updateStickyOffset);
+  window.addEventListener('scroll', () => {
+    const wrapper = document.getElementById('stickyWrapper');
+    if (window.scrollY > 12) wrapper.classList.add('scrolled');
+    else wrapper.classList.remove('scrolled');
+    updateScrollSpy();
+  }, { passive: true });
+
+  function renderSubNav(tab) {
+    const container = document.getElementById('subNavContainer');
+    const pills = SUB_NAV_CONFIG[tab] || [];
+    const todayIso = getTodayISO();
+    container.innerHTML = pills.map((p, idx) => {
+      const isToday = p.date && p.date === todayIso;
+      const label = isToday ? `📍今天・${p.label}` : p.label;
+      return `<button class="sub-pill ${idx === 0 ? 'active' : ''} ${isToday ? 'today-pill' : ''}" data-target="${p.id}" onclick="jumpToSection('${p.id}')">${label}</button>`;
+    }).join('');
+    updateStickyOffset();
+  }
+
+  function jumpToSection(sectionId) {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+    updateStickyOffset();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    highlightSubPill(sectionId);
+  }
+
+  function highlightSubPill(sectionId) {
+    const container = document.getElementById('subNavContainer');
+    const pills = container.querySelectorAll('.sub-pill');
+    pills.forEach(btn => {
+      if (btn.dataset.target === sectionId) {
+        btn.classList.add('active');
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  function updateScrollSpy() {
+    const pills = SUB_NAV_CONFIG[activeTab] || [];
+    if (!pills.length) return;
+    const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sticky-offset')) || 110;
+    let currentId = pills[0].id;
+    for (const p of pills) {
+      const el = document.getElementById(p.id);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= offset + 30) {
+          currentId = p.id;
+        }
+      }
+    }
+    highlightSubPill(currentId);
+  }
+
+  function switchTab(tab) {
+    activeTab = tab;
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tab);
+    });
+    document.querySelectorAll('.tab-panel').forEach(panel => {
+      panel.classList.toggle('active', panel.id === 'tab-' + tab);
+    });
+    renderSubNav(tab);
+    const stickyTop = document.querySelector('.hero').getBoundingClientRect().height;
+    if (window.scrollY > stickyTop) {
+      window.scrollTo({ top: stickyTop, behavior: 'smooth' });
+    }
+  }
+
+  // ==================== COLLAPSIBLE ADD PANEL & RESET ====================
+  function toggleAddPanel(type) {
+    const panel = document.getElementById('addPanel-' + type);
+    if (!panel) return;
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) {
+      const input = document.getElementById(type === 'shop' ? 'newShopName' : 'newPackName');
+      if (input) input.focus();
+    }
+  }
+
+  function resetChecks(type) {
+    const label = type === 'shop' ? '採買清單' : '打包清單';
+    if (!confirm(`確定要清空所有「${label}」的勾選狀態嗎？（自訂新增的品項會保留）`)) return;
+    const items = getAllItems(type);
+    items.forEach(i => { delete state.checked[i.id]; });
+    saveState();
+    renderChecklists();
+    showToast(`🔄 已重置所有${label}勾選狀態`);
+  }
+
+  // ==================== TAX-FREE THRESHOLD ACCUMULATOR ====================
+  function addTaxPrice() {
+    const input = document.getElementById('taxItemPrice');
+    const val = parseFloat(input.value);
+    if (isNaN(val) || val <= 0) {
+      showToast('請輸入有效的日圓金額');
+      return;
+    }
+    state.taxTotal = (state.taxTotal || 0) + Math.round(val);
+    input.value = '';
+    saveState();
+    renderTaxCalc();
+  }
+
+  function resetTaxCalc() {
+    state.taxTotal = 0;
+    saveState();
+    renderTaxCalc();
+    showToast('💴 免稅累加器已歸零');
+  }
+
+  function renderTaxCalc() {
+    const total = state.taxTotal || 0;
+    const target = 5500;
+    const pct = Math.min(100, Math.round((total / target) * 100));
+    const fill = document.getElementById('taxProgressFill');
+    const status = document.getElementById('taxCalcStatus');
+    if (!fill || !status) return;
+    fill.style.width = pct + '%';
+    if (total >= target) {
+      fill.classList.add('done');
+      status.style.color = 'var(--sage)';
+      status.textContent = `🎉 目前累計：¥${total.toLocaleString()}（已達含稅 ¥5,500 免稅門檻，可結帳退稅！）`;
+    } else {
+      fill.classList.remove('done');
+      status.style.color = '#8A500C';
+      status.textContent = `目前累計：¥${total.toLocaleString()}（距離含稅 ¥5,500 門檻還差 ¥${(target - total).toLocaleString()}）`;
+    }
+  }
+
+  // ==================== D3 SUNNY / RAINY MODE ====================
+  function setD3Mode(mode) {
+    state.d3Mode = mode;
+    saveState();
+    const sunnyBtn = document.getElementById('btnD3Sunny');
+    const rainyBtn = document.getElementById('btnD3Rainy');
+    const sunnyBlock = document.getElementById('d3SunnyBlock');
+    const rainyBlock = document.getElementById('d3RainyBlock');
+    if (mode === 'sunny') {
+      sunnyBtn.classList.add('active');
+      rainyBtn.classList.remove('active');
+      sunnyBlock.style.display = 'block';
+      rainyBlock.style.display = 'none';
+    } else {
+      rainyBtn.classList.add('active');
+      sunnyBtn.classList.remove('active');
+      sunnyBlock.style.display = 'none';
+      rainyBlock.style.display = 'block';
+    }
+  }
+
+  // ==================== CHECKLISTS & CUSTOM ITEMS ====================
+  function getAllItems(type) {
+    if (type === 'tax') return DEFAULT_ITEMS.tax;
+    if (type === 'shop') return [...state.customShop, ...DEFAULT_ITEMS.shop];
+    if (type === 'pack') return [...state.customPack, ...DEFAULT_ITEMS.pack];
+    return [];
+  }
+
+  function toggleCheck(id) {
+    state.checked[id] = !state.checked[id];
+    saveState();
+    renderChecklists();
+  }
+
+  function addCustomItem(type) {
+    const nameInput = document.getElementById(type === 'shop' ? 'newShopName' : 'newPackName');
+    const noteInput = document.getElementById(type === 'shop' ? 'newShopNote' : 'newPackNote');
+    const catSelect = document.getElementById(type === 'shop' ? 'newShopCat' : 'newPackCat');
+    const name = nameInput.value.trim();
+    if (!name) {
+      showToast('請先輸入品項名稱喔！');
+      nameInput.focus();
+      return;
+    }
+    const newItem = {
+      id: 'custom-' + type + '-' + Date.now(),
+      cat: catSelect.value,
+      name: name,
+      note: noteInput.value.trim() || '自訂新增項目',
+      custom: true
+    };
+    if (type === 'shop') state.customShop.unshift(newItem);
+    else state.customPack.unshift(newItem);
+    nameInput.value = '';
+    noteInput.value = '';
+    saveState();
+    renderChecklists();
+    showToast('✅ 已新增：' + name);
+  }
+
+  function deleteCustomItem(type, id, name) {
+    if (!confirm(`確定要刪除自訂項目「${name}」嗎？`)) return;
+    if (type === 'shop') state.customShop = state.customShop.filter(i => i.id !== id);
+    else state.customPack = state.customPack.filter(i => i.id !== id);
+    delete state.checked[id];
+    saveState();
+    renderChecklists();
+    showToast('🗑️ 已刪除自訂項目');
+  }
+
+  function buildItemHTML(item, type) {
+    const isChecked = !!state.checked[item.id];
+    const searchVal = (type === 'shop' ? document.getElementById('shopSearch')?.value : document.getElementById('packSearch')?.value || '').trim().toLowerCase();
+    const hideChecked = type === 'shop' ? document.getElementById('shopHideChecked')?.checked : document.getElementById('packHideChecked')?.checked;
+
+    let hidden = false;
+    if (hideChecked && isChecked) hidden = true;
+    if (searchVal && !item.name.toLowerCase().includes(searchVal) && !(item.note || '').toLowerCase().includes(searchVal)) {
+      hidden = true;
+    }
+
+    const safeNameAttr = escapeHtml(item.name).replace(/'/g, "\\'");
+
+    return `
+      <div class="check-item ${isChecked ? 'checked' : ''} ${hidden ? 'hidden-by-filter' : ''}">
+        <input type="checkbox" class="check-box" ${isChecked ? 'checked' : ''} onchange="toggleCheck('${item.id}')">
+        <div class="item-body" onclick="toggleCheck('${item.id}')">
+          <div class="item-name">${item.custom ? '🆕 ' : ''}${escapeHtml(item.name)}</div>
+          ${item.note ? `<div class="item-note">${escapeHtml(item.note)}</div>` : ''}
+        </div>
+        ${item.custom ? `<button class="del-btn" title="刪除" onclick="deleteCustomItem('${type}', '${item.id}', '${safeNameAttr}')">×</button>` : ''}
+      </div>
+    `;
+  }
+
+  function renderChecklists() {
+    const taxContainer = document.getElementById('taxChecklistContainer');
+    if (taxContainer) {
+      taxContainer.innerHTML = DEFAULT_ITEMS.tax.map(item => buildItemHTML(item, 'tax')).join('');
+    }
+
+    const shopCats = ['akachan', 'muji', 'workman', 'drugstore'];
+    const allShop = getAllItems('shop');
+    shopCats.forEach(cat => {
+      const el = document.getElementById('list-shop-' + cat);
+      if (el) {
+        const items = allShop.filter(i => i.cat === cat);
+        el.innerHTML = items.length ? items.map(i => buildItemHTML(i, 'shop')).join('') : '<div class="item-note">尚無項目</div>';
+      }
+    });
+
+    const packCats = ['gear', 'carryon', 'clothes', 'meds'];
+    const allPack = getAllItems('pack');
+    packCats.forEach(cat => {
+      const el = document.getElementById('list-pack-' + cat);
+      if (el) {
+        const items = allPack.filter(i => i.cat === cat);
+        el.innerHTML = items.length ? items.map(i => buildItemHTML(i, 'pack')).join('') : '<div class="item-note">尚無項目</div>';
+      }
+    });
+
+    const shopDone = allShop.filter(i => state.checked[i.id]).length;
+    const shopPct = allShop.length ? Math.round((shopDone / allShop.length) * 100) : 0;
+    document.getElementById('navShopLabel').textContent = `採買 ${shopPct}%`;
+
+    const packDone = allPack.filter(i => state.checked[i.id]).length;
+    const packPct = allPack.length ? Math.round((packDone / allPack.length) * 100) : 0;
+    document.getElementById('navPackLabel').textContent = `打包 ${packPct}%`;
+  }
+
+  // ==================== SHARE UNCHECKED FOR LINE ====================
+  function shareUnchecked(type) {
+    const items = getAllItems(type).filter(i => !state.checked[i.id]);
+    const header = type === 'shop' ? '🛍️【2026 阪京採買－尚未購買清單】' : '🧳【2026 阪京打包－尚未準備清單】';
+    if (!items.length) {
+      showToast('🎉 太強了！全部項目都已經完成囉！');
+      return;
+    }
+    const catNames = {
+      akachan: '【3F 阿卡將本鋪】',
+      muji: '【無印良品 MUJI】',
+      workman: '【3F Workman Colors】',
+      drugstore: '【藥妝 ＆ 伴手禮】',
+      gear: '【核心裝備】',
+      carryon: '【隨身媽媽包】',
+      clothes: '【託運衣物】',
+      meds: '【常備藥 ＆ 耗材】'
+    };
+    let lines = [header, `剩餘 ${items.length} 項：`];
+    let lastCat = '';
+    items.forEach(item => {
+      if (item.cat !== lastCat) {
+        lastCat = item.cat;
+        lines.push('\n' + (catNames[item.cat] || ''));
+      }
+      lines.push(`☐ ${item.name}${item.note ? `（${item.note}）` : ''}`);
+    });
+    copyText(lines.join('\n'), '📤 已複製未完成清單，可直接貼給 Nancy！');
+  }
+
+  // ==================== MEMOS, FLIGHTS & CURRENCY CONVERTER ====================
+  function loadMemosAndFx() {
+    document.getElementById('memoLeader').value = state.memos.leader || '';
+    document.getElementById('memoD2Bus').value = state.memos.d2Bus || '';
+    document.getElementById('memoD5Bus').value = state.memos.d5Bus || '';
+    document.getElementById('memoInsurance').value = state.memos.insurance || '';
+    document.getElementById('flightOutCode').value = state.flights.outCode || 'BR178';
+    document.getElementById('flightInCode').value = state.flights.inCode || 'BR177';
+    document.getElementById('fxRateInput').value = state.fxRate || '0.215';
+
+    document.getElementById('ugoOutDriver').value = state.ugo.outDriver || '';
+    document.getElementById('ugoOutPlate').value = state.ugo.outPlate || '';
+    document.getElementById('ugoOutPhone').value = state.ugo.outPhone || '';
+    document.getElementById('ugoInDriver').value = state.ugo.inDriver || '';
+    document.getElementById('ugoInPlate').value = state.ugo.inPlate || '';
+    document.getElementById('ugoInPhone').value = state.ugo.inPhone || '';
+    updateUgoCallHref('out');
+    updateUgoCallHref('in');
+  }
+
+  function syncUgo(dir) {
+    if (dir === 'out') {
+      state.ugo.outDriver = document.getElementById('ugoOutDriver').value;
+      state.ugo.outPlate = document.getElementById('ugoOutPlate').value;
+      state.ugo.outPhone = document.getElementById('ugoOutPhone').value;
+    } else {
+      state.ugo.inDriver = document.getElementById('ugoInDriver').value;
+      state.ugo.inPlate = document.getElementById('ugoInPlate').value;
+      state.ugo.inPhone = document.getElementById('ugoInPhone').value;
+    }
+    updateUgoCallHref(dir);
+    saveState();
+  }
+
+  function updateUgoCallHref(dir) {
+    const phone = (dir === 'out' ? state.ugo.outPhone : state.ugo.inPhone || '').replace(/[^0-9+]/g, '');
+    const btn = document.getElementById(dir === 'out' ? 'ugoOutCallBtn' : 'ugoInCallBtn');
+    if (btn) btn.href = phone ? `tel:${phone}` : 'tel:';
+  }
+
+  function checkUgoCall(dir) {
+    const phone = (dir === 'out' ? state.ugo.outPhone : state.ugo.inPhone || '').replace(/[^0-9+]/g, '');
+    if (!phone) {
+      showToast('請先輸入司機電話號碼喔！');
+      document.getElementById(dir === 'out' ? 'ugoOutPhone' : 'ugoInPhone').focus();
+      return false;
+    }
+    return true;
+  }
+
+  function shareUgoInfo() {
+    const u = state.ugo;
+    const text = [
+      '🚐【UGO 機場接送資訊】',
+      `📍 上下車地址：${decryptVaultItem('SENS_HOME_ADDR')}`,
+      `🛫 去程 11/27 (五) 03:50：${u.outDriver || '待填司機'}｜車牌 ${u.outPlate || '待填'}｜電話 ${u.outPhone || '待填'}`,
+      `🛬 回程 12/01 (二) 13:10：${u.inDriver || '待填司機'}｜車牌 ${u.inPlate || '待填'}｜電話 ${u.inPhone || '待填'}`
+    ].join('\n');
+    copyText(text, '📤 已複製 UGO 接送資訊，可直接貼給 Nancy！');
+  }
+
+  function saveMemo() {
+    state.memos.leader = document.getElementById('memoLeader').value;
+    state.memos.d2Bus = document.getElementById('memoD2Bus').value;
+    state.memos.d5Bus = document.getElementById('memoD5Bus').value;
+    state.memos.insurance = document.getElementById('memoInsurance').value;
+    saveState();
+  }
+
+  function saveFlightCodes() {
+    state.flights.outCode = document.getElementById('flightOutCode').value;
+    state.flights.inCode = document.getElementById('flightInCode').value;
+    saveState();
+  }
+
+  function convertFx(source) {
+    const rate = parseFloat(document.getElementById('fxRateInput').value) || 0.215;
+    state.fxRate = String(rate);
+    saveState();
+    const jpyEl = document.getElementById('fxJpy');
+    const twdEl = document.getElementById('fxTwd');
+    if (source === 'jpy') {
+      const jpy = parseFloat(jpyEl.value);
+      twdEl.value = isNaN(jpy) ? '' : Math.round(jpy * rate);
+    } else {
+      const twd = parseFloat(twdEl.value);
+      jpyEl.value = isNaN(twd) ? '' : Math.round(twd / rate);
+    }
+  }
+
+  // ==================== MODALS & UTILITIES ====================
+  function showDriver(title, addr, note) {
+    currentDriverData = { title, addr };
+    document.getElementById('driverTitle').textContent = title;
+    document.getElementById('driverAddr').textContent = addr;
+    document.getElementById('driverNote').textContent = note || '';
+    document.getElementById('driverModal').classList.add('open');
+  }
+
+  function closeDriverModal() {
+    document.getElementById('driverModal').classList.remove('open');
+  }
+
+  function copyDriverAddr() {
+    copyText(`${currentDriverData.title} ${currentDriverData.addr}`, '📋 已複製日文地名與地址！');
+  }
+
+  function openBackupModal() {
+    document.getElementById('backupCodeArea').value = JSON.stringify(state);
+    document.getElementById('backupModal').classList.add('open');
+  }
+
+  function closeBackupModal() {
+    document.getElementById('backupModal').classList.remove('open');
+  }
+
+  function copyBackupCode() {
+    const code = document.getElementById('backupCodeArea').value;
+    copyText(code, '💾 已複製完整備份碼！');
+  }
+
+  function importBackupCode() {
+    try {
+      const raw = document.getElementById('backupCodeArea').value.trim();
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === 'object') {
+        state = { ...state, ...parsed };
+        saveState();
+        loadMemosAndFx();
+        setD3Mode(state.d3Mode || 'sunny');
+        renderChecklists();
+        renderTaxCalc();
+        closeBackupModal();
+        showToast('✅ 已成功還原所有勾選與自訂清單！');
+      }
+    } catch (e) {
+      showToast('❌ 備份碼格式不正確，請確認完整貼上');
+    }
+  }
+
+  function copyText(text, msg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => fallbackCopy(text, msg));
+    } else {
+      fallbackCopy(text, msg);
+    }
+  }
+
+  function fallbackCopy(text, msg) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast(msg);
+  }
+
+  let toastTimer = null;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, s => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[s]));
+  }
+
+  // ==================== INIT ====================
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedPass = localStorage.getItem(AUTH_STORAGE_KEY);
+    if (savedPass) {
+      unlockedKey = savedPass;
+      if (decryptVaultItem('SENS_TOWER_NO').startsWith('20261119')) {
+        document.getElementById('lockScreen').classList.add('unlocked');
+        applyDecryptedData();
+      } else {
+        unlockedKey = '';
+      }
+    }
+    loadState();
+    loadMemosAndFx();
+    setD3Mode(state.d3Mode || 'sunny');
+    renderSubNav('itinerary');
+    renderChecklists();
+    renderTaxCalc();
+    updateStickyOffset();
+
+    // Auto-jump to Today's itinerary if within 2026-11-27 ~ 2026-12-01
+    const todayIso = getTodayISO();
+    const todayMatch = SUB_NAV_CONFIG.itinerary.find(item => item.date === todayIso);
+    if (todayMatch) {
+      setTimeout(() => jumpToSection(todayMatch.id), 250);
+    }
+  });
+</script>
+</body>
+</html>
